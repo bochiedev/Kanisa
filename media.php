@@ -60,7 +60,7 @@
 											$category_image = $row["category_image"];
 											
 								?>
-								<div class="col-md-3 col-xs-6">
+								<div class="col-md-3 col-xs-6" style="margin-bottom:10px;">
 
 								<div class="card col-md-10 " style="padding:0px;">
 										<img class="card-img-top" src="media/images/categories/<?php echo $category_image;?>.jpg" alt="" class="media-image">
@@ -98,7 +98,8 @@
 						</div>
 					</div>
 				</div>
-			</main> <!-- .main-content -->
+			</main>
+			 <!-- .main-content -->
 
 	<?php
 

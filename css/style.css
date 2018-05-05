@@ -2096,3 +2096,42 @@ ul.bullet li a:hover {
     position:relative;
   }
 }
+
+
+@media screen and (max-width: 767px) {
+  #myCarousel{
+   overflow: hidden;
+    
+  }
+  #church_services{
+    background:#343a3f; 
+    min-height:100px; 
+    max-height:100px;
+    
+    
+  }
+ 
+
+}
+
+@media screen and (min-width: 767px) {
+  #myCarousel{
+   
+   height: 50vh; 
+   overflow:hidden;
+    
+  }
+  #church_services{
+    background:#343a3f; 
+    min-height:70px; 
+    max-height:70px;
+    
+  }
+
+}
+
+
+
+
+ 
+

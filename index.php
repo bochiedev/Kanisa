@@ -43,7 +43,7 @@
   include_once "_includes/header.php";
   ?>
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 50vh; overflow:hidden;">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" >
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class=""></li>
                 <li data-target="#myCarousel" data-slide-to="1" class=""></li>
@@ -90,10 +90,11 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+        <div class="container-fluid">
 
         <section class="row">
 
-        <div class="box-shadow container-fluid text-center" style="background:#343a3f; min-height:70px; max-height:70px;" >
+        <div id="church_services" class="box-shadow container-fluid text-center" >
       <ul class="row " style="  list-style:none; margin-top:15px;">   
         <li class="col-md-3 col-xs-3  border-right" style="font-weight:bold; color:#f7f7f9;" >Youth &amp; Service
             <div><small>8.30 AM to 10.00 AM</small></div>
@@ -111,6 +112,7 @@
     </div>
 
         </section>
+</div>
 
 
 
