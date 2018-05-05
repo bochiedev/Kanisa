@@ -36,61 +36,45 @@
 		<?php 
   include_once "_includes/header.php";
   ?>
-		<!-- site-header -->
 
-		<div class="page-head" data-bg-image="images/img-9.jpg">
+		<div class="page-head" data-bg-image="images/img-6.jpg">
 			<div class="container">
 				<h2 class="page-title">Media</h2>
 			</div>
 		</div>
 
-		<main class="main-content">
-			<div class="fullwidth-block">
-				<div class="container">
-					<div class="row">
-						<div class="content col-md-12">
-							<h2 class="section-title">choose a Gallery</h2>
-							<div class="row">
+		<section style="background: #f7f7f9; padding: 35px 20px;">
+			<div class="container-fluid">
+				<div class="row">
 
-								<?php
+					<div class="col-md-6" style="margin-bottom: 20px;">
+						<iframe class="col-md-12 " src="https://www.youtube.com/embed/uNCr7NdOJgw?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=0"
+						    frameborder="0" allowfullscreen="1" style="height: 388.125px;"></iframe>
+					</div>
+					<div class="col-md-6 ">
+					
+						<h2>
+							Word from Our Ministers
+						</h2>
+						<p>
+							Intro with background color, paddings and a video on the right. Mobirise helps you cut down development time by providing
+							you with a flexible website editor with a drag and drop interface.
+						</p>
 
-									$query = "SELECT * FROM media_category LIMIT 10";
-									$result = mysqli_query($connection, $query);
-
-										while($row = mysqli_fetch_assoc($result)) {
-											
-											$category_name = $row["category_name"];
-											$category_image = $row["category_image"];
-											
-								?>
-									<div class="col-md-3 col-xs-6" style="margin-bottom:10px;">
-
-										<div class="card col-md-10 " style="padding:0px;">
-											<img class="card-img-top" src="media/images/categories/<?php echo $category_image;?>.jpg" alt="" class="media-image">
-											<div class="card-body">
-												<h5 class="media-name ">
-													<?php echo $category_name;?>
-												</h5>
-												<a href="gallery.php" class="btn btn-primary">View More</a>
-											</div>
-										</div>
-									</div>
-
-									<?php
-	   }
-	
-	?>
-
-							</div>
-
-						</div>
-
+						<a class="btn btn-md btn-primary display-4" href="#">More Videos</a>
+						
+						
 
 					</div>
+
 				</div>
 			</div>
+		</section>
+
+
 	</div>
-	</main>
+
+
 
 	<?php
 

@@ -43,7 +43,7 @@
   include_once "_includes/header.php";
   ?>
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class=""></li>
                 <li data-target="#myCarousel" data-slide-to="1" class=""></li>
@@ -92,36 +92,46 @@
         </div>
         <div class="container-fluid">
 
-        <section class="row">
+            <section class="row">
+               
 
-        <div id="church_services" class="box-shadow container-fluid text-center" >
-      <ul class="row " style="  list-style:none; margin-top:15px;">   
-        <li class="col-md-3 col-xs-3  border-right" style="font-weight:bold; color:#f7f7f9;" >Youth &amp; Service
-            <div><small>8.30 AM to 10.00 AM</small></div>
-        </li>
-        <li class="col-md-3 col-xs-3  border-right" style="font-weight:bold; color:#f7f7f9;" >First &amp; Service
-        <div><small>8.30 AM to 10.00 AM</small></div>
-        </li>
-        <li class="col-md-3 col-xs-3  border-right" style="font-weight:bold; color:#f7f7f9;" >Kiswahili &amp; Service
-        <div><small>10.15 AM to 11.3o AM</small></div>
-        </li>
-        <li class="col-md-3 col-xs-3 " style="font-weight:bold; color:#f7f7f9;" >Kikuyu &amp; Service
-        <div><small>11.45 AM to 1.15 PM</small></div>
-        </li>
-</ul>
-    </div>
+                <div id="church_services" class="box-shadow container-fluid text-center">
+                <h3  >Join us for Our Services</h3>
+                    <ul class="row " style="  list-style:none; margin-top:15px;">
+                        <li class="col-md-3 col-xs-3  border-right" style="font-weight:bold; color:#f7f7f9;">Youth Service
+                            <div>
+                                <small>8.30 AM to 10.00 AM</small>
+                            </div>
+                        </li>
+                        <li class="col-md-3 col-xs-3  border-right" style="font-weight:bold; color:#f7f7f9;">First Service
+                            <div>
+                                <small>8.30 AM to 10.00 AM</small>
+                            </div>
+                        </li>
+                        <li class="col-md-3 col-xs-3  border-right" style="font-weight:bold; color:#f7f7f9;">Kiswahili Service
+                            <div>
+                                <small>10.15 AM to 11.3o AM</small>
+                            </div>
+                        </li>
+                        <li class="col-md-3 col-xs-3 " style="font-weight:bold; color:#f7f7f9;">Kikuyu Service
+                            <div>
+                                <small>11.45 AM to 1.15 PM</small>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-        </section>
-</div>
+            </section>
+        </div>
 
 
 
         <main class="main-content">
 
 
-            <div class="fullwidth-block">
-                <div class="container">
-                    <h2 class="section-title">Recent Media</h2>
+            <div class="fullwidth-block" style="padding-bottom:0px;">
+                <div class="container-fluid text-center">
+                    <h2 class="section-title">- Recent Media -</h2>
 
                     <div class="row">
                         <?php
@@ -140,20 +150,18 @@
                                     
                                         
                             ?>
-                            <div class="col-md-3 col-xs-6">
-                                <div class="news card">
-                                    <image class="news-image card-img-top" src="images/<?php echo $media_name;?>.jpg"></image>
-                                    <div class="card-body">
-                                        <h3 class="news-title card-title">
+                            <div class="col-md-3 col-xs-6" style="padding:0px;">
+                               
+                                    <div class="col-md-10 col-md-offset-1">
+                                    <img height="200px" width="100%" style="overflow:hidden;" src="images/<?php echo $media_name;?>.jpg"></img>
+                                    <div class="card-body"> 
+                                        <h3 class="card-title">
                                             <a href="#">
                                                 <?php echo $media_name; ?>
                                             </a>
                                         </h3>
-                                        <small class="date">
-                                            <i class="fa fa-calendar"></i>
-                                            <?php echo $media_date; ?>
-                                        </small>
-                                    </div>
+                                    </div> 
+                               
                                 </div>
                             </div>
                             <?php 
@@ -164,6 +172,33 @@
                 </div>
 
             </div>
+            <section style="background: #f7f7f9; padding: 35px 20px;">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-md-6" style="margin-bottom: 20px;">
+                            <iframe class="col-md-12 " src="https://www.youtube.com/embed/uNCr7NdOJgw?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=0"
+                                frameborder="0" allowfullscreen="1" style="height: 388.125px;"></iframe>
+                        </div>
+                        <div class="col-md-6 ">
+
+                            <h2>
+                                Word from Our Ministers
+                            </h2>
+                            <p>
+                                Intro with background color, paddings and a video on the right. Mobirise helps you cut down development time by providing
+                                you with a flexible website editor with a drag and drop interface.
+                            </p>
+
+                            <a class="btn btn-md btn-primary display-4" href="#">More Videos</a>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
 
 
 
@@ -199,7 +234,6 @@
                             ?>
 
                                     <li>
-                                        <img src="images/small-thumb-1.jpg" alt="">
                                         <div class="notification-detail">
                                             <h3 class="notification-title">
                                                 <a href="#">

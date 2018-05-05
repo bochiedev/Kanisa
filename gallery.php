@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 		
 		<title></title>
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<!-- Loading third party fonts -->
 		<link href="fonts/novecento-font/novecento-font.css" rel="stylesheet" type="text/css">
 	<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -34,52 +34,47 @@
   include_once "_includes/header.php";
   ?>
 
-  <div class="page-head" data-bg-image="images/img-6.jpg">
+  <div class="page-head" data-bg-image="images/img-9.jpg">
     <div class="container">
-        <h2 class="page-title">Media</h2>
+        <h2 class="page-title">Gallery</h2>
     </div>
 </div>
 
-  <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card add-animation animation-2 animate">
-                            <img alt="..." src="/media/images/img-6.jpg">
-                        </div>
-                        <div class="card add-animation animation-4 animate">
-                            <img alt="..." src="/media/images/img-6.jpg">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card add-animation animation-1 animate">
-                            <img alt="..." src="/media/images/img-6.jpg">
-                        </div>
-                        <div class="card add-animation animation-3 animate">
-                            <img alt="..." src="/media/images/img-6.jpg">
-                        </div>
-                        <div class="card add-animation animation-2 animate">
-                            <img alt="..." src="/media/images/img-6.jpg">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card add-animation animation-3 animate">
-                            <img alt="..." src="/media/images/img-6.jpg">
-                        </div>
-                         <div class="card add-animation animation-1 animate">
-                            <img alt="..." src="/media/images/img-6.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="container">
+        <div class="row" style="margin:20px 0px;">
+        <?php
+
+$query = "SELECT * FROM media WHERE media_category = 3 LIMIT 10";
+$result = mysqli_query($connection, $query);
+
+    while($row = mysqli_fetch_assoc($result)) {
+        
+        $media_name = $row["media_name"];
+        
+?>
+ <div class="col-md-3">
+                
+                <img class="thumbnail img-fluid"
+                    src="media/images/<?php echo "img-6"?>.jpg" />
+            
         </div>
+
+
+<?php
+}
+
+?>
+           
+       
+    
     </div>
+</div>
 
 
 
+</div>
 
-        </div>	
+
         
         <?php
 
