@@ -2063,3 +2063,36 @@ ul.bullet li a:hover {
 .contact-form textarea {
   min-height: 150px;
 }
+
+
+
+@media screen and (min-width: 767px) {
+  .carousel-caption {
+    border-radius: 15px;
+    padding: 30px 35px;
+    position: absolute;
+    z-index: 1;
+    display:table;
+    height:100%;
+    text-align:left;
+  }
+  
+  .absolute-div {
+    position: absolute;
+      top: 40vh;
+      left: -20px;
+    min-width: calc(100%);
+  
+  }
+  
+  .carousel-caption h3 {
+    /* display:table-cell; */
+    /* vertical-align: middle; */
+    font-weight: bold;
+    /* text-align:left; */
+  }
+  
+  .item {
+    position:relative;
+  }
+}

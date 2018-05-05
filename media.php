@@ -18,8 +18,7 @@
 	 crossorigin="anonymous"></script>
 
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
 	<!-- Loading main css file -->
@@ -46,7 +45,7 @@
 				<div class="fullwidth-block">
 					<div class="container">
 						<div class="row">
-							<div class="content col-md-8">
+							<div class="content col-md-12">
 								<h2 class="section-title">choose a Gallery</h2>
 								<div class="row">
 									
@@ -55,23 +54,22 @@
 									$query = "SELECT * FROM media_category LIMIT 10";
 									$result = mysqli_query($connection, $query);
 
-
 										while($row = mysqli_fetch_assoc($result)) {
-
-
 											
 											$category_name = $row["category_name"];
 											$category_image = $row["category_image"];
 											
-												 
-
 								?>
+								<div class="col-md-3 col-xs-6">
 
-								<div class="media">
-										<img src="media/images/categories/<?php echo $category_image;?>.jpg" alt="" class="media-image">
-										<h3 class="media-name"><?php echo $category_name;?></h3>
+								<div class="card col-md-10 " style="padding:0px;">
+										<img class="card-img-top" src="media/images/categories/<?php echo $category_image;?>.jpg" alt="" class="media-image">
+										<div class="card-body">
+										<h5 class="media-name "><?php echo $category_name;?></h5>
+										<a href="#" class="btn btn-primary">View More</a>
+										</div>
 									</div>
-
+									</div>
 
 								<?php
 	   }
@@ -81,36 +79,7 @@
 								</div>
 								
 							</div>
-							<div class="sidebar col-md-3 col-md-offset-1">
-								<div class="widget">
-									<h3 class="widget-title">Categories</h3>
-									<ul class="arrow">
-									<?php
-
-$query = "SELECT * FROM media_category LIMIT 5";
-$result = mysqli_query($connection, $query);
-
-
-	while($row = mysqli_fetch_assoc($result)) {
-
-
-		$category_name =  $row["category_name"];
-		
-
-
-?>
-<li>
-										<a href="#"><?php echo $category_name ; ?></a>
-									</li>
-
-
-<?php
-}
-
-?>
-									</ul>
-								</div>
-
+	 
 
 								<!-- <div class="widget">
 									<h3 class="widget-title">Gallery updates</h3>

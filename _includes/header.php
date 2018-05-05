@@ -16,7 +16,7 @@
 
 $fullUrl= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-if(strpos($fullUrl, "index.php") == True ){
+if(strpos($fullUrl, "index.php") == True){
 
 
 echo '

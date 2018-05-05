@@ -32,10 +32,7 @@
     <!-- My css -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!--[if lt IE 9]>
-		<script src="js/ie-support/html5.js"></script>
-		<script src="js/ie-support/respond.js"></script>
-		<![endif]-->
+
 
 </head>
 
@@ -46,94 +43,88 @@
   include_once "_includes/header.php";
   ?>
 
-        <div class="hero" style="background:#000;">
-            <div class="slides">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 50vh; overflow:hidden;">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img class="first-slide" src="media/images/img-6.jpg" width="100%">
+                    <div class="absolute-div">
+                        <div class="carousel-caption" style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5));">
+                            <h3>Behold! The Outstretched Hand of God is Over Us.</h3>
+                            <p>Year 2018 Theme.</p>
 
-                <?php
-
-                    $query = "SELECT * FROM media WHERE media_type = 3 ";
-                    $result = mysqli_query($connection, $query);
-                    
-                    
-                        while($row = mysqli_fetch_assoc($result)) {
-                    
-                    
-                            
-                            $media_name = $row["media_name"];
-                            
-                                
-                    ?>
-
-                    <li data-bg-image="images/<?php echo $media_name;?>.jpg">
-                        <div class="container">
-                            <div class="slide-content">
-                                <small class="slide-subtitle">Bahati Martyr's</small>
-                                <h2 class="slide-title">To be a holistic place of worship</h2>
-
-                            </div>
                         </div>
-                    </li>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="second-slide" src="media/images/img-6.jpg" width="100%" alt="Second slide">
+                    <div class="absolute-div">
+                        <div class="carousel-caption" style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5));">
+                            <h3>Behold! The Outstretched Hand of God is Over Us.</h3>
+                            <p>Year 2018 Theme.</p>
 
-                    <?php 
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <img class="third-slide" src="media/images/img-6.jpg" width="100%" alt="Third slide">
+                    <div class="absolute-div">
+                        <div class="carousel-caption" style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5));">
+                            <h3>Behold! The Outstretched Hand of God is Over Us.</h3>
+                            <p>Year 2018 Theme.</p>
 
-                        }
-                    
-              
-                ?>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
 
+        <section class="row">
+
+        <div class="box-shadow container-fluid text-center" style="background:#343a3f; min-height:70px; max-height:70px;" >
+      <ul class="row " style="  list-style:none; margin-top:15px;">   
+        <li class="col-md-3 col-xs-3  border-right" style="font-weight:bold; color:#f7f7f9;" >Youth &amp; Service
+            <div><small>8.30 AM to 10.00 AM</small></div>
+        </li>
+        <li class="col-md-3 col-xs-3  border-right" style="font-weight:bold; color:#f7f7f9;" >First &amp; Service
+        <div><small>8.30 AM to 10.00 AM</small></div>
+        </li>
+        <li class="col-md-3 col-xs-3  border-right" style="font-weight:bold; color:#f7f7f9;" >Kiswahili &amp; Service
+        <div><small>10.15 AM to 11.3o AM</small></div>
+        </li>
+        <li class="col-md-3 col-xs-3 " style="font-weight:bold; color:#f7f7f9;" >Kikuyu &amp; Service
+        <div><small>11.45 AM to 1.15 PM</small></div>
+        </li>
+</ul>
+    </div>
+
+        </section>
+
+
+
         <main class="main-content">
-            <div class="fullwidth-block" style="background:#f5f5f5; padding: 30px 0px;">
-                <div class="container">
 
-
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12">
-
-
-
-                            <?php
-
-$query = "SELECT * FROM media WHERE media_type = 1 ";
-$result = mysqli_query($connection, $query);
-
-
-    while($row = mysqli_fetch_assoc($result)) {
-
-
-        
-        $media_name = $row["media_name"];
-        
-            
-?>
-
-                                <video class="mejs__player" width="100%" height="500" controls autoplay>
-                                    <source src="media/videos/<?php echo $media_name;?>.mp4" type="video/mp4"> Sorry, your browser doesn't support the video element.
-                                </video>
-
-                                <?php 
-    }
-                                    ?>
-
-
-                        </div>
-
-                    </div>
-
-                </div>
-                <!-- .container -->
-            </div>
-            <!-- section -->
 
             <div class="fullwidth-block">
                 <div class="container">
                     <h2 class="section-title">Recent Media</h2>
 
                     <div class="row">
-                            <?php
+                        <?php
 
-                            $query = "SELECT * FROM media WHERE media_type = 2  LIMIT 4";
+                            $query = "SELECT * FROM media WHERE media_type = 3  LIMIT 4";
                             $result = mysqli_query($connection, $query);
                             
                             
@@ -147,17 +138,23 @@ $result = mysqli_query($connection, $query);
                                     
                                         
                             ?>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="news">
-                                <image class="news-image" src="images/<?php echo $media_name;?>.jpg"></image>
-                                <h3 class="news-title">
-                                    <a href="#"><?php echo $media_name; ?></a>
-                                </h3>
-                                <small class="date">
-                                    <i class="fa fa-calendar"></i><?php echo $media_date; ?></small>
+                            <div class="col-md-3 col-xs-6">
+                                <div class="news card">
+                                    <image class="news-image card-img-top" src="images/<?php echo $media_name;?>.jpg"></image>
+                                    <div class="card-body">
+                                        <h3 class="news-title card-title">
+                                            <a href="#">
+                                                <?php echo $media_name; ?>
+                                            </a>
+                                        </h3>
+                                        <small class="date">
+                                            <i class="fa fa-calendar"></i>
+                                            <?php echo $media_date; ?>
+                                        </small>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <?php 
+                            <?php 
                     }
                         ?>
 
