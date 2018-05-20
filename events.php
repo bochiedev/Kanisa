@@ -37,7 +37,7 @@
   ?>
 		<!-- .site-header -->
 
-		<div class="page-head" data-bg-image="images/img-9.jpg">
+		<div class="page-head" data-bg-image="images/img-6.jpg">
 			<div class="container">
 				<h2 class="page-title">Events</h2>
 			</div>
@@ -91,8 +91,8 @@
 										<p>
 											<?php echo $event_info; ?>
 										</p>
-										<a href="#" class="button">Attending : <?php echo $event_attending; ?></a>
-										<a href="#" class="button secondary">Interested : <?php echo $event_interested; ?></a>
+										<!-- <a href="#" class="button">Attending : <?php echo $event_attending; ?></a>
+										<a href="#" class="button secondary">Interested : <?php echo $event_interested; ?></a> -->
 									</li>
 
 									<?php

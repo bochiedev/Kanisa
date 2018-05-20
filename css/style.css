@@ -359,16 +359,6 @@ form input[type="reset"] {
   line-height: normal;
 }
 
-.button.secondary,
-form input.secondary[type="submit"],
-form button.secondary,
-form input.secondary[type="reset"] {
-  /* background: #e3dfda; */
-  /* background: -webkit-linear-gradient(#e3dfda, #d0cbc4); */
-  /* background: linear-gradient(#e3dfda, #d0cbc4); */
-  /* border-bottom: 1px solid #b1aea8; */
-  /* color: #7c7975; */
-}
 
 .container {
   margin-right: auto;
@@ -1492,9 +1482,6 @@ form input.secondary[type="reset"] {
   font-weight: bold;
 }
 
-.main-navigation {
-  /* border-top: 1px solid #e5e5e5;  */
-}
 
 .main-navigation .menu-toggle {
   float: right;
@@ -2130,6 +2117,9 @@ ul.bullet li a:hover {
   margin-top:10px;
  
 }
+
+
+
 
 
 

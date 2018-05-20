@@ -75,9 +75,12 @@ $result = mysqli_query($connection, $query);
 </div>
 
 
+
+
         
         <?php
 
 include_once "_includes/footer.php";
 
 ?>
+

@@ -110,12 +110,12 @@
                         </li>
                         <li class="col-md-3 col-xs-3  border-right" style="font-weight:bold; color:#f7f7f9;">Kiswahili Service
                             <div>
-                                <small>10.15 AM to 11.3o AM</small>
+                                <small>10.15 AM to 11.45 AM</small>
                             </div>
                         </li>
                         <li class="col-md-3 col-xs-3 " style="font-weight:bold; color:#f7f7f9;">Kikuyu Service
                             <div>
-                                <small>11.45 AM to 1.15 PM</small>
+                                <small>12.00 AM to 1.30 PM</small>
                             </div>
                         </li>
                     </ul>
@@ -190,7 +190,7 @@
                                 you with a flexible website editor with a drag and drop interface.
                             </p>
 
-                            <a class="btn btn-md btn-primary display-4" href="#">More Videos</a>
+                            <a class="btn btn-md btn-primary display-4" href="https://www.youtube.com" target="_blank">More Videos</a>
 
 
 
@@ -211,7 +211,7 @@
 
                         </div>
                         <div class="col-md-6">
-                            <h2 class="section-title">Notifications</h2>
+                            <h2 class="section-title">Upcoming Events</h2>
                             <ul class="notification-list">
 
                                 <?php
@@ -261,7 +261,7 @@
                             </ul>
 
                             <div class="text-center">
-                                <button href="#" class="btn btn-primary">See all notifications</button>
+                                <button href="events.php" class="btn btn-primary">See all Events</button>
                             </div>
                         </div>
                     </div>
