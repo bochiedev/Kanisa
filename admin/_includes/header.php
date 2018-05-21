@@ -197,20 +197,6 @@
     <div class="sidebar custom-scrollbar">
         <div class="sidebar-content">
 
-            <!-- Sidebar search -->
-            <div class="sidebar-search">
-                <form method="get" class="sidebar-search-form">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search...">
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-default">
-                                <i class="icon fa fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <!-- /Sidebar search -->
 
             <!-- Navigation -->
             <ul class="sidebar-navigation sb-nav">
@@ -334,58 +320,17 @@
                 </li>
 
                 <li>
-                    <a href="charts.html" class="sb-nav-item">
+                    <a href="charts.php" class="sb-nav-item">
                         <i class="icon fa fa-line-chart"></i>
                         <span>Charts</span>
-                        <span class="badge badge-danger badge-square">New</span>
                     </a>
                 </li>
 
             </ul>
             <!-- /Navigation -->
 
-            <!-- Sidebar title -->
-            <div class="sidebar-title">Summary information</div>
-            <!-- /Sidebar title -->
 
-            <!-- Summary information -->
-            <div class="sidebar-summary-progress">
 
-                <!-- Progress bar -->
-                <div class="progress-titled mb-0p5">
-                    <div class="progress-title">Pending <span class="value">37%</span></div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-primary" role="progressbar"
-                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 37%;">
-                        </div>
-                    </div>
-                </div>
-                <!-- /Progress bar -->
-
-                <!-- Progress bar -->
-                <div class="progress-titled mb-0p5">
-                    <div class="progress-title">Approved <span class="value">60%</span></div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar"
-                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                        </div>
-                    </div>
-                </div>
-                <!-- /Progress bar -->
-
-                <!-- Progress bar -->
-                <div class="progress-titled mb-0p5">
-                    <div class="progress-title">Rejected <span class="value">3%</span></div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-danger" role="progressbar"
-                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 3%;">
-                        </div>
-                    </div>
-                </div>
-                <!-- /Progress bar -->
-
-            </div>
-            <!-- /Summary information -->
 
         </div>
     </div>

@@ -29,7 +29,7 @@
 
 <body>
 	<div class="site-content">
-		<?php 
+		<?php
   include_once "_includes/header.php";
   ?>
 
@@ -40,19 +40,19 @@
 		</div>
 
 			<div class="container-fluid" style="padding:0px;">
-			
+
 
 		<section class="row focus" style="margin: 0px 0px 30px 0px; background:#f8f9fa; padding:30px 0px;">
 			<div class="col-md-12 text-center" style="margin:10px 0px;">
 				<h1 class="card-title">- Our Focus -</h1>
 				<!-- <p class="">What we believe in.</p> -->
 			</div>
-			
+
 			<div class="col-md-4 text-center ">
 				<div class="col-md-10 col-md-offset-1 border-right" style="height:120px;">
 						<h3 class="card-title">OUR VISION</h3>
 						<p class="card-text">To be a Preferred Parish of Holistic Worship for all Nations</p>
-					
+
 			</div>
 
 			</div>
@@ -60,7 +60,7 @@
 				<div class="col-md-10 col-md-offset-1" style="height:120px;">
 						<h3 class="card-title">OUR MISSION</h3>
 						<p class="card-text">To Serve God and Humanity, and witness His Grace to all by implementing His Will</p>
-					
+
 				</div>
 
 			</div>
@@ -69,14 +69,14 @@
 						<h3 class="card-title">OUR VALUES</h3>
 						<p class="card-text">
 							Being prayerful; Loving; Full of Integrity; Being Inclusive; Having a Caring Attitude; Being Disciplined and Embracing Fellowship</p>
-				
+
 				</div>
 
 </div>
 		</section>
 </div>
         <div class="container">
-		
+
 
 		<section class="row ministers text-center" style="min-height:350px;">
 
@@ -89,26 +89,26 @@
 					<div class="col-md-4 ">
 						<img class="rounded-circle" src="media/images/img-6.jpg" width="140" height="140">
 					</div>
-					<div class="col-md-8 col-xs-8 text-left">
+					<div class="col-md-8 col-xs-12 text-left">
 						<h2 class="">Rev Albert Karanja</h2>
-						<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id
+						<p >Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id
 							elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-						<p>
+						<!-- <p>
 							<a class="btn btn-secondary" href="#" role="button">View details »</a>
-						</p>
+						</p> -->
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="col-md-4">
 						<img class="rounded-circle" src="media/images/img-6.jpg" width="140" height="140">
 					</div>
-					<div class="col-md-8 col-xs-8 text-left">
+					<div class="col-md-8 col-xs-12 text-left">
 						<h2>Rev Dawn Gikandi</h2>
 						<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur
 							purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-						<p>
+						<!-- <p>
 							<a class="btn btn-secondary" href="#" role="button">View details »</a>
-						</p>
+						</p> -->
 					</div>
 				</div>
 			</div>
@@ -123,5 +123,5 @@
 	<?php
 
 		include_once "_includes/footer.php";
-		
+
 		?>
