@@ -1,4 +1,4 @@
-<?php 
+<?php
   include_once "_includes/db.inc.php";
   ?>
 <!DOCTYPE html>
@@ -7,7 +7,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-		
+
 		<title></title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<!-- Loading third party fonts -->
@@ -30,7 +30,7 @@
 
 		<div class="site-content">
 
-		<?php 
+		<?php
   include_once "_includes/header.php";
   ?>
 
@@ -44,29 +44,37 @@
         <div class="row" style="margin:20px 0px;">
         <?php
 
-$query = "SELECT * FROM media WHERE media_category = 3 LIMIT 10";
+
+        if (isset($_GET['category'])) {
+            $category_id = $_GET['category'];
+
+$query = "SELECT * FROM media WHERE media_category = $category_id LIMIT 10";
 $result = mysqli_query($connection, $query);
 
     while($row = mysqli_fetch_assoc($result)) {
-        
+
         $media_name = $row["media_name"];
-        
+        if($row > 0){
+
 ?>
  <div class="col-md-3">
-                
+
                 <img class="thumbnail img-fluid"
                     src="media/images/<?php echo "img-6"?>.jpg" />
-            
+
         </div>
 
 
 <?php
+}else{
+  echo "<h3>No images for ths category</h3>";
 }
-
+}
+}
 ?>
-           
-       
-    
+
+
+
     </div>
 </div>
 
@@ -77,10 +85,9 @@ $result = mysqli_query($connection, $query);
 
 
 
-        
+
         <?php
 
 include_once "_includes/footer.php";
 
 ?>
-

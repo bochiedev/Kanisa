@@ -1,4 +1,4 @@
-<?php 
+<?php
   include_once "_includes/db.inc.php";
   ?>
 <!DOCTYPE html>
@@ -32,7 +32,7 @@
 
 <body>
 	<div class="site-content">
-		<?php 
+		<?php
   include_once "_includes/header.php";
   ?>
 		<!-- .site-header -->
@@ -47,7 +47,7 @@
 			<div class="fullwidth-block">
 				<div class="container">
 					<div class="row">
-						<div class="content col-md-12">
+						<div class="content col-md-8">
 							<h2 class="section-title">Upcoming Events</h2>
 							<ul class="event-list large">
 
@@ -66,8 +66,8 @@
 											$event_info = $row["event_info"];
 											$event_attending = $row['event_attending'];
 											$event_interested = $row['event_interested'];
-											
-		 
+
+
 
 								?>
 
@@ -97,40 +97,26 @@
 
 									<?php
 	   }
-	
+
 	?>
 
 
 
 							</ul>
 						</div>
-					
 
 
-							<!-- <div class="widget">
-								<h3 class="widget-title">Gallery updates</h3>
 
-								<div class="galery-thumb">
-									<a href="#">
-										<img src="images/gallery-thumb-1.jpg" alt="">
-									</a>
-									<a href="#">
-										<img src="images/gallery-thumb-2.jpg" alt="">
-									</a>
-									<a href="#">
-										<img src="images/gallery-thumb-3.jpg" alt="">
-									</a>
-									<a href="#">
-										<img src="images/gallery-thumb-4.jpg" alt="">
-									</a>
-									<a href="#">
-										<img src="images/gallery-thumb-5.jpg" alt="">
-									</a>
-									<a href="#">
-										<img src="images/gallery-thumb-6.jpg" alt="">
-									</a>
+							<div class="widget col-md-4">
+								<h3 class="widget-title">calendar</h3>
+
+								<div class="container">
+                  <?php
+                  include_once "calendar/fullcalendar.html";
+                  ?>
+
 								</div>
-							</div> -->
+							</div>
 
 						</div>
 					</div>

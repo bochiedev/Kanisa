@@ -1,4 +1,4 @@
-<?php 
+<?php
   include_once "_includes/db.inc.php";
   ?>
 <!DOCTYPE html>
@@ -33,7 +33,7 @@
 
 	<div class="site-content">
 
-		<?php 
+		<?php
   include_once "_includes/header.php";
   ?>
 		<!-- site-header -->
@@ -54,14 +54,27 @@
 
 								<?php
 
+
+
+
+
+
 									$query = "SELECT * FROM media_category LIMIT 10";
 									$result = mysqli_query($connection, $query);
 
 										while($row = mysqli_fetch_assoc($result)) {
-											
+
+
+											$category_id = $row["id"];
+
 											$category_name = $row["category_name"];
 											$category_image = $row["category_image"];
-											
+
+                      
+
+
+
+
 								?>
 									<div class="col-md-3 col-xs-6" style="margin-bottom:10px;">
 
@@ -71,14 +84,16 @@
 												<h5 class="media-name ">
 													<?php echo $category_name;?>
 												</h5>
-												<a href="gallery.php" class="btn btn-primary">View More</a>
+												<?php echo "<a href='gallery.php?category=$category_id' class='btn btn-primary'>View {$category_name}</a>";
+												?>
 											</div>
 										</div>
 									</div>
 
 									<?php
+
 	   }
-	
+
 	?>
 
 							</div>

@@ -1,11 +1,12 @@
+<?php session_start(); ?>
+<?php include "_includes/db.php"; ?>
+<?php include "functions.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from vtdes.ru/demo/wgboard/charts.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 May 2018 09:18:47 GMT -->
 <head>
 
     <!-- Page title -->
-    <title>WgBoard - Responsive multipurpose HTML dashboard template</title>
+    <title>Bahati | Admin</title>
     <!-- /Page title -->
 
     <!-- Meta -->
@@ -31,70 +32,166 @@
     <link rel="stylesheet" href="assets/components/jqvmap/dist/jqvmap.min.css">
     <link rel="stylesheet" href="assets/css/theme.css">
     <!-- /Styles -->
+    <script>
+    function _(el){
+return document.getElementById(el);
+    }
+    function uploadFile(){
+      var =  _('file').files[0];
+      var formdata =  new FormData();
+      formdata.append('file', file);
+      var ajax = new XMLHttpRequest();
+      ajax.upload.addEventListener('progress', progressHandler, false);
+      ajax.addEventListener('load', completeHandler, false);
+      ajax.addEventListener('error', errorHandler, false);
+      ajax.addEventListener('abort', abortHandler, false);
+      ajax.send(formdata);
+    }
+    function progressHandler(event){
+      var percent = (event.loaded / event.total) *100;
+      _('progressbar').value = Math.round(percent);
+    }
+    function completeHandler(event){
+      _('progressbar').value = 0;
+    }
+
+
+
+
+    </script>
 
 </head>
 <body class="sidebar-expanded">
 
-
-<!-- Preloader -->
 <div class="preloader loader"></div>
-<!-- /Preloader -->
 
-
-<!-- Header -->
 
 <?php
 include_once "_includes/header.php";
 ?>
 
-
-<!-- /Header -->
-
-
-<!-- Main container -->
 <main class="main-container">
+  <div class="container">
 
 
-    <!-- Page heading -->
-    <header class="page-heading">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12">
+    <div id="page-wrapper">
 
-                    <!-- Breadcrumb -->
-                    <ol class="breadcrumb">
-                        <li>
-                            <i class="icon fa fa-home"></i>
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="active"><span>Charts</span></li>
-                    </ol>
-                    <!-- /Breadcrumb -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+
+
+                <h1 class="page-header">
+                    Welcome to admin
+                    <small>Author</small>
+                </h1>
+
+
+                <div class="col-xs-6">
+
+                <?php insert_categories();  ?>
+
+        <form action="" method="post">
+          <div class="form-group">
+             <label for="cat-title">Add Category</label>
+              <input type="text" class="form-control" name="cat_title">
+          </div>
+           <div class="form-group">
+              <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
+          </div>
+
+        </form>
+
+        <?php // UPDATE AND INCLUDE QUERY
+
+        if(isset($_GET['edit'])) {
+
+            $cat_id = $_GET['edit'];
+
+            include "includes/update_categories.php";
+
+
+        }
+
+
+        ?>
+
+
+        </div><!--Add Category Form-->
+
+                <div class="col-xs-6">
+        <table class="table table-bordered table-hover">
+
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Category Title</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            <?php
+
+
+        $query = "SELECT * FROM categories";
+        $select_categories = mysqli_query($connection,$query);
+
+        while($row = mysqli_fetch_assoc($select_categories)) {
+        $cat_id = $row['cat_id'];
+        $cat_title = $row['cat_title'];
+
+        echo "<tr>";
+
+        echo "<td>{$cat_id}</td>";
+        echo "<td>{$cat_title}</td>";
+       echo "<td><a href='categories.php?delete={$cat_id}'>Delete</a></td>";
+       echo "<td><a href='categories.php?edit={$cat_id}'>Edit</a></td>";
+        echo "</tr>";
+
+        }
+
+
+
+
+    ?>
+
+
+
+
+            </tbody>
+        </table>
+
+
+
+
+                    </div>
 
 
                 </div>
             </div>
+            <!-- /.row -->
+
         </div>
-    </header>
-    <!-- /Page heading -->
-
-
-    <!-- Content container -->
-    <div class="container-fluid">
-
-
+        <!-- /.container-fluid -->
 
     </div>
-    <!-- /Content container -->
+
+
+
+    <?php
+
+    deleteCategories();
+
+     ?>
+
+  </div>
 
 
 </main>
 
-
-
-
-
-<!-- Scripts -->
 <script src="assets/js/jquery-2.2.0.min.js"></script>
 <script src="assets/components/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 <script src="assets/components/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
@@ -114,5 +211,5 @@ include_once "_includes/header.php";
 
 </body>
 
-<!-- Mirrored from vtdes.ru/demo/wgboard/charts.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 May 2018 09:18:47 GMT -->
+<!-- Mirrored from vtdes.ru/demo/wgboard/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 May 2018 09:18:46 GMT -->
 </html>

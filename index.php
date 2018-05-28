@@ -1,4 +1,4 @@
-<?php 
+<?php
   include_once "_includes/db.inc.php";
   ?>
 <!DOCTYPE html>
@@ -39,7 +39,7 @@
 
 <body>
     <div class="site-content">
-        <?php 
+        <?php
   include_once "_includes/header.php";
   ?>
 
@@ -93,7 +93,7 @@
         <div class="container-fluid">
 
             <section class="row">
-               
+
 
                 <div id="church_services" class="box-shadow container-fluid text-center">
                 <h3  >Join us for Our Services</h3>
@@ -138,33 +138,33 @@
 
                             $query = "SELECT * FROM media WHERE media_type = 3  LIMIT 4";
                             $result = mysqli_query($connection, $query);
-                            
-                            
+
+
                                 while($row = mysqli_fetch_assoc($result)) {
-                            
-                            
-                                    
+
+
+
                                     $media_name = $row["media_name"];
                                     $media_date = $row["media_date"];
                                     $media_name = $row["media_name"];
-                                    
-                                        
+
+
                             ?>
                             <div class="col-md-3 col-xs-6" style="padding:0px;">
-                               
+
                                     <div class="col-md-10 col-md-offset-1">
                                     <img height="200px" width="100%" style="overflow:hidden;" src="images/<?php echo $media_name;?>.jpg"></img>
-                                    <div class="card-body"> 
+                                    <div class="card-body">
                                         <h3 class="card-title">
-                                            <a href="#">
+                                            <a href="media.php">
                                                 <?php echo $media_name; ?>
                                             </a>
                                         </h3>
-                                    </div> 
-                               
+                                    </div>
+
                                 </div>
                             </div>
-                            <?php 
+                            <?php
                     }
                         ?>
 
@@ -207,7 +207,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h2 class="section-title">Recent Tweets</h2>
-
+                              
 
                         </div>
                         <div class="col-md-6">
@@ -226,11 +226,11 @@
                                     $event_title =  $row["event_name"];
                                     $event_date = $row["event_date"];
                                      $event_location = $row["event_location"];
-                            
 
 
-                            
-                            
+
+
+
                             ?>
 
                                     <li>
@@ -255,7 +255,7 @@
 
                                     <?php
                                    }
-                                
+
                                 ?>
 
                             </ul>
