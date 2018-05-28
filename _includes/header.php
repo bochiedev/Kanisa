@@ -4,7 +4,7 @@
 
 	<div class="main-navigation">
 		<a href="index.php" class="branding">
-			<h1 class="site-title">Bahati Martyrs</h1>
+			<h1 class="site-title">Bahati Martyrs' Church</h1>
 		</a>
 		<a href="index.php" class="branding">
 			<img src="images/logo.png" alt="" class="logo">
@@ -20,7 +20,7 @@
 			<li class="menu-item">
 					<a href="about.php">About Us</a>
 				</li>
-			
+
 			<li class="menu-item">
 				<a href="events.php">Events</a>
 			</li>
@@ -31,12 +31,10 @@
 				<a href="#contact">Contact Us </a>
 			</li>
 		</ul>
-	
+
 
 </div>
 
 <div class="mobile-navigation"></div>
 </div>
 </header>
-
-

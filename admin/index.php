@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Admin | Login</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="assets/components/bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -17,19 +17,14 @@
   </head>
 
   <body class="text-center">
-    <form class="form-signin col-md-3" style="top:50%; left:35%;">
-      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    <form class="form-signin col-md-3" action="includes/login.php" method="post" style="top:50%; left:35%;">
+      <h1 class="h3 mb-3 font-weight-normal">Please Log in</h1>
+      <label class="sr-only">Username</label>
+      <input type="text"  name="username"  class="form-control" placeholder="Email address" required autofocus>
+      <label class="sr-only">Password</label>
+      <input type="password" class="form-control" name="password" placeholder="Password" required>
+      <button class="btn btn-lg btn-primary btn-block" name="login" type="submit">Log in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
     </form>
   </body>
 </html>

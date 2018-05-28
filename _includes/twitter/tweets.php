@@ -5,7 +5,7 @@
 
  <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    
+
 
 </head>
 <body>
@@ -27,25 +27,24 @@ $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $
 $content = $connection->get("account/verify_credentials");
 
 
-// $statuses = $connection->get("statuses/home_timeline", ["count" => 1, "exclude_replies" => true]);
+$statuses = $connection->get("statuses/home_timeline", ["count" => 1, "exclude_replies" => true]);
+
+// <?php include_once "_includes/twitter/tweets.php";?>
 
 
 
 ?>
 
-<a class="twitter-timeline" 
-    data-aria-polite="assertive" 
-    data-lang="en" data-chrome="nofooter noheader"  
-    data-tweet-limit="3"  
-    data-height="500" 
+<a class="twitter-timeline"
+    data-aria-polite="assertive"
+    data-lang="en" data-chrome="nofooter noheader"
+    data-tweet-limit="3"
+    data-height="500"
     data-dnt="true"
-    data-link-color="#2B7BB9"  
-    href="https://twitter.com/_Bochie?ref_src=twsrc%5Etfw"
+    data-link-color="#2B7BB9"
+    href="https://twitter.com/Bochie_ltd?ref_src=twsrc%5Etfw"
     ></a>
 
 
 </body>
 </html>
-
-
- 
