@@ -27,7 +27,7 @@
                                 </li>
                                 <li id="tweet">
 									<i class="fab fa-twitter-square fa-2x" style="margin-right:20px;"></i> twitter
-									
+
                                 </li>
                                 <li>
                                     <i class="fab fa-instagram fa-2x" style="margin-right:20px;"></i>instagram
@@ -69,7 +69,7 @@
 		<!-- .site-footer -->
 
 		</div>
-		
+
 
 
 
@@ -87,8 +87,11 @@
 
     <script src="js/app.js"></script>
 
-    
-    
+
+
 </body>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<script src="calendar.js"></script>
 
 </html>

@@ -57,9 +57,9 @@ function getCalender($year = '',$month = '')
                         $currentDate = $dateYear.'-'.$dateMonth.'-'.$dayCount;
                         $eventNum = 0;
                         //Include db configuration file
-                        include 'dbConfig.php';
+                        include '_includes/db.inc.php';
                         //Get number of events based on the current date
-                        $result = $db->query("SELECT title FROM events WHERE date = '".$currentDate."' AND status = 1");
+                        $result = $db->query("SELECT title FROM calendar WHERE date = '".$currentDate."' AND status = 1");
                         $eventNum = $result->num_rows;
                         //Define date cell color
                         if(strtotime($currentDate) == strtotime(date("Y-m-d"))){

@@ -24,6 +24,14 @@
 
 	<!-- Loading main css file -->
 	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+
+
+
+
 
 
 
@@ -44,14 +52,24 @@
 		</div>
 
 		<main class="main-content">
-			<div class="fullwidth-block">
-				<div class="container">
-					<div class="row">
-						<div class="content col-md-8">
-							<h2 class="section-title">Upcoming Events</h2>
-							<ul class="event-list large">
+				<div class="container-fluid">
+          <div class="row d-flex justify-content-center" style=" background-color:#f5f5f5; min-width:calc(100%);">
+            <div class="col-md-6 " style="margin-top:20px;">
+              <div class="input-group mb-3">
+  <input type="date" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button class="input-group-text" >Click To show Event</button>
+  </div>
+</div>
 
-								<?php
+            </div>
+
+          </div>
+					<div class="row">
+
+            <div class="col-md-12 ">
+              <h2 class="section-title text-center">Upcoming Events</h2>
+                <?php
 
 									$query = "SELECT * FROM events LIMIT 5";
 									$result = mysqli_query($connection, $query);
@@ -70,59 +88,40 @@
 
 
 								?>
+		<div class="row row-striped">
+			<div class="col-2 text-right">
+				<h1 class="display-4"><span class="badge badge-secondary">23</span></h1>
+				<h2>OCT</h2>
+			</div>
+			<div class="col-10">
+				<h3 class="text-uppercase"><strong><?php echo $event_name; ?></strong></h3>
+				<ul class="list-inline">
+				    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</li>
+					<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
+					<li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i>         <?php echo $event_location; ?></li>
+				</ul>
+        <p>
+        <?php echo $event_info; ?>
+        </p>
+			</div>
+		</div>
+    <?php
+}
 
+?>
+	</div>
 
-									<li>
-										<h3 class="event-title">
-											<a href="#">
-												<?php echo $event_name; ?>
-											</a>
-										</h3>
-										<span class="event-meta">
-											<span>
-												<i class="fa fa-calendar"></i>
-												<?php echo $event_date; ?>
-											</span>
-											<span>
-												<i class="fa fa-map-marker"></i>
-												<?php echo $event_location; ?>
-											</span>
-										</span>
-										<p>
-											<?php echo $event_info; ?>
-										</p>
-										<!-- <a href="#" class="button">Attending : <?php echo $event_attending; ?></a>
-										<a href="#" class="button secondary">Interested : <?php echo $event_interested; ?></a> -->
-									</li>
-
-									<?php
-	   }
-
-	?>
+            </div>
 
 
 
-							</ul>
-						</div>
 
-
-
-							<div class="widget col-md-4">
-								<h3 class="widget-title">calendar</h3>
-
-								<div class="container">
-                  <?php
-                  include_once "calendar/fullcalendar.html";
-                  ?>
-
-								</div>
-							</div>
 
 						</div>
 					</div>
 				</div>
+      </main>
 			</div>
-		</main>
 		<!-- .main-content -->
 
 		<?php
@@ -130,3 +129,4 @@
 include_once "_includes/footer.php";
 
 ?>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
