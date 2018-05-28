@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php include "_includes/db.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,7 +83,7 @@ include_once "_includes/header.php";
 
     <!-- Page heading -->
     <header class="page-heading">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12">
 
@@ -89,7 +91,7 @@ include_once "_includes/header.php";
                         <li>
                             <i class="icon fa fa-home"></i>
                             <a href="#">Home</a>
-                        </li>aria-valuenow="0"
+                        </li>
                         <li><a href="#">Dashboard</a></li>
                         <li class="active"><span>Main page</span></li>
                     </ol>
@@ -253,18 +255,24 @@ include_once "_includes/header.php";
                                       <input type="file" name="file_array[]" id="file"  multiple>
 
                                   </div>
-  </div>
                                   <div class="form-group">
-                                    <label >category</label>
+                                  <label>Categories</label>
+                                  <select >
+                                  <?php
 
-                                      <select class="form-control" >
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                      </select>
-                                    </div>
+                                  $query = "SELECT * FROM categories";
+                                  $select_categories = mysqli_query($connection, $query);
+                                  // confirmQuery($select_categories);
+                                  while ($row = mysqli_fetch_assoc($select_categories)) {
+                                      $cat_id = $row['cat_id'];
+                                      $cat_title = $row['cat_title'];
+                                      echo "<option selected value='{$cat_id}'>{$cat_title}</option>";
+                                  }
+                                  ?>
+                                  </select>
+                                  </div>
+
+
 
                                   <button type="submit" class="btn btn-success" onclick="uploadFile()">Upload</button>
                               </form>
