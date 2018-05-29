@@ -207,7 +207,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h2 class="section-title">Recent Tweets</h2>
-                              
+
 
                         </div>
                         <div class="col-md-6">
@@ -261,7 +261,7 @@
                             </ul>
 
                             <div class="text-center">
-                                <button href="events.php" class="btn btn-primary">See all Events</button>
+                                <a href="events.php" class="btn btn-primary">See all Events</a>
                             </div>
                         </div>
                     </div>

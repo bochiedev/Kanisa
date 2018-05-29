@@ -23,6 +23,10 @@
 
 	<!-- Loading main css file -->
 	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="gallery.js"></script>
+
+
 
 	</head>
 	<body>
@@ -40,15 +44,20 @@
     </div>
 </div>
 
+
+
+  <span style="float:left; color:#000000;" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
+  <span style="float:right; color:#000000;" class="ss-icon" onclick="galleryspin('')">&gt;</span>
+</div>
 <div class="container">
-        <div class="row" style="margin:20px 0px;">
+        <div class="row d-flex-wrap" style="margin:20px 0px;">
         <?php
 
 
         if (isset($_GET['category'])) {
             $category_id = $_GET['category'];
 
-$query = "SELECT * FROM media WHERE media_category = $category_id LIMIT 10";
+$query = "SELECT * FROM media WHERE media_category = $category_id ";
 $result = mysqli_query($connection, $query);
 
     while($row = mysqli_fetch_assoc($result)) {
@@ -57,9 +66,9 @@ $result = mysqli_query($connection, $query);
         if($row > 0){
 
 ?>
- <div class="col-md-3">
+ <div class="col-md-3 col-xs-3">
 
-                <img class="thumbnail img-fluid"
+                <img class="img-thumbnail img-fluid"
                     src="media/images/<?php echo "img-6"?>.jpg" />
 
         </div>
