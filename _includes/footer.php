@@ -23,37 +23,67 @@
                             <h3 class="widget-title">Social Media</h3>
                             <ul class="bullet" >
                                 <li>
-                                    <i class="fab fa-facebook fa-2x" style="margin-right:20px;"></i> <span>Facebook</span>
+                                  <a href="https://www.facebook.com/pceabahati/" target="_blank">  <i class="fab fa-facebook fa-2x" style="margin-right:20px;"></i> <span>Facebook</span></a>
                                 </li>
                                 <li id="tweet">
-									<i class="fab fa-twitter-square fa-2x" style="margin-right:20px;"></i> twitter
+								<a href="https://twitter.com/PCEABahati" target="_blank">	<i class="fab fa-twitter-square fa-2x" style="margin-right:20px;"></i><span> twitter </span></a>
 
                                 </li>
                                 <li>
-                                    <i class="fab fa-instagram fa-2x" style="margin-right:20px;"></i>instagram
+                                  <a href="https://www.instagram.com/pceabahati/" target="_blank">  <i class="fab fa-instagram fa-2x" style="margin-right:20px;"></i> <span>instagram </span></a>
                                 </li>
-                                <li>
-                                    <i class="fab fa-youtube fa-2x" style="margin-right:20px;"></i>youtube
-                                </li>
+                                <!-- <li>
+                                <a href="https://twitter.com/PCEABahati">    <i class="fab fa-youtube fa-2x" style="margin-right:20px;"></i><span> youtube </span></a>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-4" id="contact">
                         <div class="widget">
                             <h3 class="widget-title">Contact Us</h3>
-                            <form action="#" class="contact-form">
+                            <?php
+if(isset($_POST['mail'])){
+
+
+$message = $_POST['message'];
+$name = $_POST['user_name'];
+$email = $_POST['email'];
+
+$to = "bochiegfx@gmail.com";
+$subject = "Message From". $name ;
+
+// Always set content-type when sending HTML email
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+$headers .= 'From: <jamohsize@gmail.com>' . "\r\n";
+
+$mail = mail($to,$subject,$message,$headers);
+
+if(!$mail){
+
+  echo "<script>alert('error encountered')</script>";
+
+}else{
+  echo "<script>alert('success')</script>";
+
+}
+}
+?>
+                            <form action="" method="post" class="contact-form">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="Your name...">
+                                        <input type="text" name="user_name" placeholder="Your name...">
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="Email...">
+                                        <input type="text" name="email" placeholder="Email...">
                                     </div>
                                 </div>
 
-                                <textarea name="" placeholder="Your message..."></textarea>
+                                <textarea name="message" placeholder="Your message..."></textarea>
                                 <div class="text-right">
-                                    <button class="btn btn-primary" type="submit">Send message</button>
+                                    <button class="btn btn-primary" name="mail" type="submit">Send message</button>
                                 </div>
 
                             </form>
@@ -62,7 +92,7 @@
                 </div>
                 <!-- .row -->
 
-                <p class="colophon">Copyright 2014 Bahati Martyr's. All right reserved</p>
+                <p class="colophon">Copyright <?php echo date('Y'); ?> Bahati Martyr's. All right reserved</p>
             </div>
             <!-- .container -->
         </footer>

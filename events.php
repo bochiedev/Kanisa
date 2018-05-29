@@ -154,22 +154,20 @@ $event_date = $_POST['eventdate'];
 											$event_date = $row["event_date"];
 											$event_location = $row["event_location"];
 											$event_info = $row["event_info"];
-											// $event_attending = $row['event_attending'];
-											// $event_interested = $row['event_interested'];
 
 
 
 								?>
 		<div class="row row-striped">
-			<div class="col-2 text-right">
+			<!-- <div class="col-2 text-right" >
 				<h1 class="display-4"><span class="badge badge-secondary">23</span></h1>
 				<h2>OCT</h2>
-			</div>
+			</div> -->
 			<div class="col-10">
 				<h3 class="text-uppercase"><strong><?php echo $event_name; ?></strong></h3>
 				<ul class="list-inline">
-				    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</li>
-					<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
+				    <li class="list-inline-item"><i class="fas fa-calendar" aria-hidden="true"></i> <?php echo $event_date; ?></li>
+					<li class="list-inline-item"><i class="fas fa-clock" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
 					<li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i>         <?php echo $event_location; ?></li>
 				</ul>
         <p>

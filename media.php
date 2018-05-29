@@ -59,18 +59,17 @@
 
 
 
-									$query = "SELECT * FROM media_category LIMIT 10";
+									$query = "SELECT * FROM media_category";
 									$result = mysqli_query($connection, $query);
 
 										while($row = mysqli_fetch_assoc($result)) {
 
 
 											$category_id = $row["id"];
-
-											$category_name = $row["category_name"];
+											$category_date = $row["category_date"];
 											$category_image = $row["category_image"];
 
-                      
+
 
 
 
@@ -82,9 +81,9 @@
 											<img class="card-img-top" src="media/images/categories/<?php echo $category_image;?>.jpg" alt="" class="media-image">
 											<div class="card-body">
 												<h5 class="media-name ">
-													<?php echo $category_name;?>
+													<?php echo $category_date;?>
 												</h5>
-												<?php echo "<a href='gallery.php?category=$category_id' class='btn btn-primary'>View {$category_name}</a>";
+												<?php echo "<a href='gallery.php?category=$category_id' class='btn btn-primary'>View {$category_date}</a>";
 												?>
 											</div>
 										</div>

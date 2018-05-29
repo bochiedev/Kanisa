@@ -45,9 +45,6 @@
 </div>
 
 
-
-  <span style="float:left; color:#000000;" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
-  <span style="float:right; color:#000000;" class="ss-icon" onclick="galleryspin('')">&gt;</span>
 </div>
 <div class="container">
         <div class="row d-flex-wrap" style="margin:20px 0px;">

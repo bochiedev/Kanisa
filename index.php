@@ -136,7 +136,7 @@
                     <div class="row">
                         <?php
 
-                            $query = "SELECT * FROM media WHERE media_type = 3  LIMIT 4";
+                            $query = "SELECT * FROM media LIMIT 4";
                             $result = mysqli_query($connection, $query);
 
 
@@ -146,7 +146,6 @@
 
                                     $media_name = $row["media_name"];
                                     $media_date = $row["media_date"];
-                                    $media_name = $row["media_name"];
 
 
                             ?>
@@ -157,7 +156,7 @@
                                     <div class="card-body">
                                         <h3 class="card-title">
                                             <a href="media.php">
-                                                <?php echo $media_name; ?>
+                                                <?php echo $media_date; ?>
                                             </a>
                                         </h3>
                                     </div>
@@ -186,12 +185,10 @@
                                 Word from Our Ministers
                             </h2>
                             <p>
-                                Intro with background color, paddings and a video on the right. Mobirise helps you cut down development time by providing
-                                you with a flexible website editor with a drag and drop interface.
+
                             </p>
 
-                            <a class="btn btn-md btn-primary display-4" href="https://www.youtube.com" target="_blank">More Videos</a>
-
+                          
 
 
                         </div>

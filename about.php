@@ -83,38 +83,32 @@
 				<div class="col-md-12" style="margin: 20px 0px;">
 					<h1 class="card-title">- Our Ministers -</h1>
 				</div>
-				<div class="row">
 
-				<div class="col-md-6 ">
-					<div class="col-md-4 ">
-						<img class="rounded-circle" src="media/images/img-6.jpg" width="140" height="140">
-					</div>
-					<div class="col-md-8 col-xs-12 text-left">
-						<h2 class="">Rev Albert Karanja</h2>
-						<p >Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id
-							elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-						<!-- <p>
-							<a class="btn btn-secondary" href="#" role="button">View details »</a>
-						</p> -->
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="col-md-4">
-						<img class="rounded-circle" src="media/images/img-6.jpg" width="140" height="140">
-					</div>
-					<div class="col-md-8 col-xs-12 text-left">
-						<h2>Rev Dawn Gikandi</h2>
-						<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur
-							purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-						<!-- <p>
-							<a class="btn btn-secondary" href="#" role="button">View details »</a>
-						</p> -->
-					</div>
-				</div>
-			</div>
 
-		</section>
+				<div class="col-md-6 d-flex justify-content-around" style="margin: auto;">
+					<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="media/images/img-6.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Rev Albert Karanja</h5>
+  </div>
 </div>
+					</div>
+
+				<div class="col-md-6 d-flex justify-content-around" style="margin: auto;">
+
+					<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="media/images/img-6.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Rev Dawn Gikandi</h5>
+  </div>
+</div>
+
+
+					</div>
+
+
+
+</section>
 	</div>
 
 
@@ -122,6 +116,6 @@
 
 	<?php
 
-		include_once "_includes/footer.php";
+        include_once "_includes/footer.php";
 
-		?>
+        ?>
