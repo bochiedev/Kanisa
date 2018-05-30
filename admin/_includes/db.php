@@ -3,7 +3,7 @@
 $db['db_host'] = "localhost";
 $db['db_user'] = "root";
 $db['db_pass'] = "";
-$db['db_name'] = "BahatiAdmin";
+$db['db_name'] = "BahatiChurch";
 
 foreach($db as $key => $value){
 define(strtoupper($key), $value);
@@ -18,7 +18,6 @@ mysqli_query($connection,$query);
 
 if($connection) {
 
-echo "We are connected";
 
 }
 

@@ -1,5 +1,7 @@
 <?php session_start(); ?>
-<?php include "_includes/db.php"; ?>
+<?php include "_includes/db.php";
+      include "functions.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,18 +89,10 @@ include_once "_includes/header.php";
             <div class="row">
                 <div class="col-xs-12">
 
-                    <ol class="breadcrumb">
-                        <li>
-                            <i class="icon fa fa-home"></i>
-                            <a href="#">Home</a>
-                        </li>
-                        <li><a href="#">Dashboard</a></li>
-                        <li class="active"><span>Main page</span></li>
-                    </ol>
 
                     <!-- Page header -->
                     <div class="page-header">
-                        <h1 class="page-title">Welcome back Mary!</h1>
+                        <h1 class="page-title">Welcome back <?php echo $_SESSION['username'] ?></h1>
                     </div>
                     <!-- /Page header -->
 
@@ -121,7 +115,7 @@ include_once "_includes/header.php";
 
                               <!-- Form -->
                               <form>
-gi
+
                                   <div class="form-group">
                                       <label for="frm01--file">File input</label>
                                       <input type="file" id="frm01--file">
@@ -220,7 +214,7 @@ gi
                                   </div>
                                   <div class="form-group">
                                       <label >Date</label>
-                                      <input type="date"  class="form-control" placeholder="date">
+                                      <input type="date" data-date-format="YYYY-MM-DD"  class="form-control" placeholder="date">
                                   </div>
                                   <div class="form-group">
                                       <label >Location</label>
@@ -256,25 +250,13 @@ gi
 
                                   </div>
                                   <div class="form-group">
-                                  <label>Categories</label>
-                                  <select >
-                                  <?php
-
-                                  $query = "SELECT * FROM categories";
-                                  $select_categories = mysqli_query($connection, $query);
-                                  // confirmQuery($select_categories);
-                                  while ($row = mysqli_fetch_assoc($select_categories)) {
-                                      $cat_id = $row['cat_id'];
-                                      $cat_title = $row['cat_title'];
-                                      echo "<option selected value='{$cat_id}'>{$cat_title}</option>";
-                                  }
-                                  ?>
-                                  </select>
+                                      <label >Date</label>
+                                      <input type="date" data-date-format="YYYY-MM-DD" name="upload_date"  class="form-control" placeholder="date">
                                   </div>
 
 
 
-                                  <button type="submit" class="btn btn-success" onclick="uploadFile()">Upload</button>
+                                  <button type="submit" class="btn btn-success" onclick="uploadFile()" name="upload">Upload</button>
                               </form>
                               <!-- /Form -->
 

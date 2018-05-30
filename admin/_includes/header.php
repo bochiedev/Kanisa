@@ -47,7 +47,7 @@
 
                     <!-- Profile avatar -->
                     <a href="#" class="dropdown-toggle nav-profile" data-toggle="dropdown">
-                        <span class="profile-name">James</span>
+                        <span class="profile-name"><?php echo $_SESSION['username'] ?></span>
                         <span class="caret"></span>
                         <div class="profile-avatar">
                             <div class="profile-avatar-image">

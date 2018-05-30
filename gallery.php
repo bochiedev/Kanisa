@@ -60,20 +60,22 @@ $result = mysqli_query($connection, $query);
     while($row = mysqli_fetch_assoc($result)) {
 
         $media_name = $row["media_name"];
+        $media_date = $row["media_date"];
+
+      
+
         if($row > 0){
 
 ?>
  <div class="col-md-3 col-xs-3">
 
                 <img class="img-thumbnail img-fluid"
-                    src="media/images/<?php echo "img-6"?>.jpg" />
+                    src="admin/images/<?php echo $media_date."/".$media_name;?>.png" />
 
         </div>
 
 
 <?php
-}else{
-  echo "<h3>No images for ths category</h3>";
 }
 }
 }

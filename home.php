@@ -27,6 +27,7 @@ include_once "includes/db.inc.php";
 <!-- My css -->
 <link rel="stylesheet" href="css/style.css">
 
+
 </head>
 
 
@@ -71,61 +72,61 @@ include_once "includes/db.inc.php";
 				<div class="col-md-3" style="background:#f8f8f8;">
 
 					<h3 class="bg-primary" style="padding:5px;">News and Events</h3>
-					
-					
+
+
 					<?php
-					
-					
-	$notification = "SELECT * FROM notifications LIMIT 4";		
+
+
+	$notification = "SELECT * FROM notifications LIMIT 4";
 	$result = mysqli_query($connection, $notification);
 	$query = mysqli_num_rows($result);
-	
+
 		if($query < 1){
-		
+
 		echo " <small>No Notifications or Events</small>";
-		
+
 	}else{
 		while($row = mysqli_fetch_assoc($result)){
-			
+
 			$notification_id = $row['id'];
 			$title = $row['title'];
 			$date = $row['date'];
 			$notification_text = $row['notification_text'];
 					?>
-			
+
 					<div class="word col-md-12">
 						<h3><b><?php echo $title; ?></b></h3>
 						<h6><?php echo $date; ?></h6>
 						<p><?php echo $notification_text; ?><span><a href="#"><b> Read more </b></a></span></p>
 					</div>
-					
-					
+
+
 					<?php }
 		}
 			?>
-					
+
 
 
 				</div>
 				<div class="col-md-9 divider-no-bottom">
 
 					<h3 class="bg-primary" style="padding:5px;">Daily Devotion</h3>
-					
-					
+
+
 									<?php
-					
-					
-	$notification = "SELECT * FROM daily_devotion LIMIT 4";		
+
+
+	$notification = "SELECT * FROM daily_devotion LIMIT 4";
 	$result = mysqli_query($connection, $notification);
 	$query = mysqli_num_rows($result);
-	
+
 		if($query < 1){
-		
+
 		echo " <small>No Articles </small>";
-		
+
 	}else{
 		while($row = mysqli_fetch_assoc($result)){
-			
+
 			$devotion_id = $row['id'];
 			$devotion_title = $row['title'];
 			$devotion_date = $row['date'];
@@ -138,7 +139,7 @@ include_once "includes/db.inc.php";
 						<h6><?php echo $devotion_date; ?></h6>
 						<p><?php echo $devotion_word; ?><span><a href="#"><b> Read more </b></a></span></p>
 					</div>
-					
+
 					<?php }}  ?>
 
 

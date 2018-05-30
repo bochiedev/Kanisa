@@ -31,6 +31,8 @@
 
     <!-- My css -->
     <link rel="stylesheet" href="css/style.css">
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 
 
@@ -136,7 +138,7 @@
                     <div class="row">
                         <?php
 
-                            $query = "SELECT * FROM media LIMIT 4";
+                            $query = "SELECT * FROM media_category ORDER BY category_date DESC LIMIT 4 ";
                             $result = mysqli_query($connection, $query);
 
 
@@ -144,8 +146,8 @@
 
 
 
-                                    $media_name = $row["media_name"];
-                                    $media_date = $row["media_date"];
+                                    $media_name = $row["category_image"];
+                                    $media_date = $row["category_date"];
 
 
                             ?>
@@ -188,7 +190,7 @@
 
                             </p>
 
-                          
+
 
 
                         </div>
@@ -205,7 +207,6 @@
                         <div class="col-md-6">
                             <h2 class="section-title">Recent Tweets</h2>
 
-
                         </div>
                         <div class="col-md-6">
                             <h2 class="section-title">Upcoming Events</h2>
@@ -213,7 +214,7 @@
 
                                 <?php
 
-                            $query = "SELECT * FROM events LIMIT 5";
+                            $query = "SELECT * FROM events ORDER BY event_date DESC LIMIT 5 ";
                             $result = mysqli_query($connection, $query);
 
 

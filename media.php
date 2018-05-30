@@ -59,7 +59,7 @@
 
 
 
-									$query = "SELECT * FROM media_category";
+									$query = "SELECT * FROM media_category ORDER BY category_date DESC";
 									$result = mysqli_query($connection, $query);
 
 										while($row = mysqli_fetch_assoc($result)) {
@@ -74,11 +74,12 @@
 
 
 
+
 								?>
 									<div class="col-md-3 col-xs-6" style="margin-bottom:10px;">
 
 										<div class="card col-md-10 " style="padding:0px;">
-											<img class="card-img-top" src="media/images/categories/<?php echo $category_image;?>.jpg" alt="" class="media-image">
+											<img class="card-img-top" src="admin/images/<?php echo $category_date."/".$category_image;?>.jpg" alt="" class="media-image">
 											<div class="card-body">
 												<h5 class="media-name ">
 													<?php echo $category_date;?>
