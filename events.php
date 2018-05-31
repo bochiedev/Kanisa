@@ -28,7 +28,7 @@ include_once "_includes/head_tags.php";
   ?>
 		<!-- .site-header -->
 
-		<div class="page-head" data-bg-image="images/img-6.jpg">
+		<div class="page-head" data-bg-image="images/headers/img-9.jpg">
 			<div class="container">
 				<h2 class="page-title">Events</h2>
 			</div>
@@ -80,6 +80,8 @@ $event_date = $_POST['eventdate'];
           $event_date2 = $row["event_date"];
           $event_location2 = $row["event_location"];
           $event_info2 = $row["event_info"];
+          $event_time2 = $row["event_time"];
+
 
 
 
@@ -90,15 +92,11 @@ $event_date = $_POST['eventdate'];
 
 ?>
 <div class="row row-striped" style="background-color:#f5f5f5;">
-<div class="col-2 text-right">
-<h1 class="display-4"><span class="badge badge-secondary">23</span></h1>
-<h2>OCT</h2>
-</div>
+
 <div class="col-10">
 <h3 class="text-uppercase"><strong><?php echo $event_name2; ?></strong></h3>
 <ul class="list-inline">
-<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</li>
-<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
+<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo $event_time2; ?></li>
 <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i>         <?php echo $event_location2; ?></li>
 </ul>
 <p>
@@ -122,7 +120,7 @@ $event_date = $_POST['eventdate'];
 
 					<div class="row">
 
-            <div class="col-md-12 ">
+            <div class="container">
               <h2 class="section-title text-center">Upcoming Events</h2>
                 <?php
 
@@ -137,6 +135,8 @@ $event_date = $_POST['eventdate'];
 											$event_date = $row["event_date"];
 											$event_location = $row["event_location"];
 											$event_info = $row["event_info"];
+                      $event_time = $row["event_time"];
+
 
 
 
@@ -146,11 +146,11 @@ $event_date = $_POST['eventdate'];
 				<h1 class="display-4"><span class="badge badge-secondary">23</span></h1>
 				<h2>OCT</h2>
 			</div> -->
-			<div class="col-10">
+			<div class="col-10 " >
 				<h3 class="text-uppercase"><strong><?php echo $event_name; ?></strong></h3>
 				<ul class="list-inline">
 				    <li class="list-inline-item"><i class="fas fa-calendar" aria-hidden="true"></i> <?php echo $event_date; ?></li>
-					<li class="list-inline-item"><i class="fas fa-clock" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
+					<li class="list-inline-item"><i class="fas fa-clock" aria-hidden="true"></i> <?php echo $event_time; ?></li>
 					<li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i>         <?php echo $event_location; ?></li>
 				</ul>
         <p>
@@ -158,6 +158,7 @@ $event_date = $_POST['eventdate'];
         </p>
 			</div>
 		</div>
+    <hr>
     <?php
 }
 

@@ -5,7 +5,7 @@
  * Url: http://www.ariona.net
  */
 
-/*=========================================== 
+/*===========================================
  * Importing CSS Libraries
  *===========================================*/
 
@@ -56,6 +56,7 @@ textarea {
 
 body {
   margin: 0;
+  height:100%;
 }
 
 a {
@@ -1501,7 +1502,7 @@ form input[type="reset"] {
   .hero .slides li {
     height: 70vh;
   }
-  
+
   .main-navigation .menu-toggle {
     display: inline-block;
   }
@@ -1964,7 +1965,7 @@ form .hero .slides input[type="reset"]:after {
   /* list-style-image: url(images/arrow.png); */
   /* list-style-position: inside; */
   list-style-position: none;
-  
+
 }
 
 .arrow li {
@@ -2058,22 +2059,22 @@ ul.bullet li a:hover {
     height:100%;
     text-align:left;
   }
-  
+
   .absolute-div {
     position: absolute;
       top: 40vh;
       left: -20px;
     min-width: calc(100%);
-  
+
   }
-  
+
   .carousel-caption h3 {
     /* display:table-cell; */
     /* vertical-align: middle; */
     font-weight: bold;
     /* text-align:left; */
   }
-  
+
   .item {
     position:relative;
   }
@@ -2083,46 +2084,37 @@ ul.bullet li a:hover {
 @media screen and (max-width: 767px) {
   #myCarousel{
    overflow: hidden;
-    
+
   }
   #church_services{
-    background:#343a3f; 
-    min-height:160px; 
+    background:#343a3f;
+    min-height:160px;
     max-height:160px;
-   
+
   }
- 
+
 
 }
 
 @media screen and (min-width: 767px) {
   #myCarousel{
-   
-   height: 50vh; 
+
+   height: 50vh;
    overflow:hidden;
-    
+
   }
   #church_services{
-    background:#343a3f; 
-    min-height:100px; 
+    background:#343a3f;
+    min-height:100px;
     max-height:100px;
-    
+
   }
 
 }
 
 #church_services h3{
-  font-weight: bold; 
-  color:#fff; 
+  font-weight: bold;
+  color:#fff;
   margin-top:10px;
- 
+
 }
-
-
-
-
-
-
-
- 
-

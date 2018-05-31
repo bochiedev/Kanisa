@@ -28,7 +28,7 @@ include_once "_includes/head_tags.php";
   include_once "_includes/header.php";
   ?>
 
-  <div class="page-head" data-bg-image="images/img-9.jpg">
+  <div class="page-head" data-bg-image="images/headers/img-9.jpg">
     <div class="container">
         <h2 class="page-title">Gallery</h2>
     </div>

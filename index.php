@@ -9,16 +9,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
-    <title>Bahati Martyr's | Home</title>
+    <title>Bahati Martyr's | Welcome </title>
 
 
 
 
-<?php
-include_once "_includes/head_tags.php";
 
-?>
 
+    <?php
+    include_once "_includes/head_tags.php";
+
+    ?>
 </head>
 
 
@@ -29,36 +30,17 @@ include_once "_includes/head_tags.php";
   ?>
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
+            <!-- <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class=""></li>
                 <li data-target="#myCarousel" data-slide-to="1" class=""></li>
                 <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
-            </ol>
+            </ol> -->
             <div class="carousel-inner">
-                <div class="carousel-item">
-                    <img class="first-slide" src="media/images/img-6.jpg" width="100%">
-                    <div class="absolute-div">
-                        <div class="carousel-caption" style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5));">
-                            <h3>Behold! The Outstretched Hand of God is Over Us.</h3>
-                            <p>Year 2018 Theme.</p>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="second-slide" src="media/images/img-6.jpg" width="100%" alt="Second slide">
-                    <div class="absolute-div">
-                        <div class="carousel-caption" style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5));">
-                            <h3>Behold! The Outstretched Hand of God is Over Us.</h3>
-                            <p>Year 2018 Theme.</p>
-
-                        </div>
-                    </div>
-                </div>
                 <div class="carousel-item active">
-                    <img class="third-slide" src="media/images/img-6.jpg" width="100%" alt="Third slide">
+                    <img class="third-slide" src="images/carousel/banner.jpg" width="100%" alt="Third slide">
                     <div class="absolute-div">
-                        <div class="carousel-caption" style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5));">
+                        <div class="carousel-caption" style="background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7));">
                             <h3>Behold! The Outstretched Hand of God is Over Us.</h3>
                             <p>Year 2018 Theme.</p>
 

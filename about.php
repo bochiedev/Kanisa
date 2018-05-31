@@ -24,7 +24,7 @@ include_once "_includes/head_tags.php";
   include_once "_includes/header.php";
   ?>
 
-		<div class="page-head" data-bg-image="images/img-9.jpg">
+		<div class="page-head" data-bg-image="images/headers/img-9.jpg">
 			<div class="container">
 				<h2 class="page-title">About Us</h2>
 			</div>
@@ -79,7 +79,7 @@ include_once "_includes/head_tags.php";
 
 				<div class="col-md-6 d-flex justify-content-around" style="margin: auto;">
 					<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="images/Rev-Karanja.jpg" alt="rev image">
+  <img class="card-img-top" src="images/pastoral/Rev-Karanja.jpg" alt="rev image">
   <div class="card-body">
     <h5 class="card-title">Rev Albert Karanja</h5>
 		<p>Parish Moderator</p>
@@ -90,7 +90,7 @@ include_once "_includes/head_tags.php";
 				<div class="col-md-6 d-flex justify-content-around" style="margin: auto;">
 
 					<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="images/Rev-Dawn.jpg" alt="rev image">
+  <img class="card-img-top" src="images/pastoral/Rev-Dawn.jpg" alt="rev image">
   <div class="card-body">
     <h5 class="card-title">Rev Dawn Gikandi</h5>
 		<p>Minister</p>

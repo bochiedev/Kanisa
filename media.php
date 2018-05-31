@@ -31,7 +31,7 @@ include_once "_includes/head_tags.php";
   ?>
 		<!-- site-header -->
 
-		<div class="page-head" data-bg-image="images/img-9.jpg">
+		<div class="page-head" data-bg-image="images/headers/img-9.jpg">
 			<div class="container">
 				<h2 class="page-title">Media</h2>
 			</div>
@@ -72,7 +72,7 @@ include_once "_includes/head_tags.php";
 									<div class="col-md-3 col-xs-6" style="margin-bottom:10px;">
 
 										<div class="card col-md-10 " style="padding:0px;">
-											<img class="card-img-top" src="admin/images/<?php echo $category_date."/".$category_image;?>" alt="" class="media-image">
+											<img height="200px" width="100%" class="card-img-top" src="admin/images/<?php echo $category_date."/".$category_image;?>" alt="" class="media-image">
 											<div class="card-body">
 												<h5 class="media-name ">
 													<?php echo $category_date;?>

@@ -1,5 +1,5 @@
 
-        <footer class="site-footer">
+        <footer class="site-footer" style="bottom:0px;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
@@ -15,7 +15,7 @@
                                     <i class="fa fa-phone" style="margin-right:20px;" ></i><span> 020 351 3088 </span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span> 020 230 9936 </span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span> 0733 561 285</span>
                                   </li>
                                 <li>
-                                    <i class="fa fa-envelope" style="margin-right:20px;" ></i> <span> prayer@pceabahati.org </span></li>
+                                    <i class="fa fa-envelope" style="margin-right:20px;" ></i> <span> pceabahatimartyrs@gmail.com </span></li>
                             </ul>
                         </div>
 					</div>
