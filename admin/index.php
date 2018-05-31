@@ -20,7 +20,7 @@
     <form class="form-signin col-md-3" action="includes/login.php" method="post" style="top:50%; left:35%;">
       <h1 class="h3 mb-3 font-weight-normal">Please Log in</h1>
       <label class="sr-only">Username</label>
-      <input type="text"  name="username"  class="form-control" placeholder="Email address" required autofocus>
+      <input type="text"  name="username"  class="form-control" placeholder="Username" required autofocus>
       <label class="sr-only">Password</label>
       <input type="password" class="form-control" name="password" placeholder="Password" required>
       <button class="btn btn-lg btn-primary btn-block" name="login" type="submit">Log in</button>

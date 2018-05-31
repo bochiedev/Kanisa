@@ -77,6 +77,7 @@ include_once "_includes/header.php";
 
 
 <!-- /Header -->
+                            include "db.php";
 
 
 <!-- Main container -->
@@ -237,12 +238,88 @@ include_once "_includes/header.php";
                               <div class="panel-title">Gallery update</div>
                           </div>
                           <div class="panel-body pb">
-                            <!-- <div class="progress">
-                            <div class="progress-bar" id="progressbar" value="0"  style="width: 25%"  max="100"></div>
-                            </div> -->
 
-                              <!-- Form -->
-                              <form action="_includes/image_upload.php" method="post" enctype="multipart/form-data">
+                            <?php
+                            if (isset($_POST['upload'])) {
+                                $upload_date = $_POST['upload_date'];
+
+
+                                if (isset($_FILES['file_array'])) {
+                                    $name_array = $_FILES['file_array']['name'];
+                                    $tmp_name_array = $_FILES['file_array']['tmp_name'];
+                                    $type_array = $_FILES['file_array']['type'];
+                                    $size_array = $_FILES['file_array']['size'];
+                                    $error_array = $_FILES['file_array']['error'];
+
+
+                                    $name1 = array_values( $name_array)[0];
+
+                                    if (!is_dir("images/".$upload_date."/")) {
+                                        $makedir = mkdir("images/".$upload_date."/");
+                                        if ($makedir) {
+                                            $cat_query = "INSERT INTO media_category(category_date, category_image) VALUES('$upload_date','$name1')";
+                                            $add_category = mysqli_query($connection, $cat_query);
+
+                                            if ($add_category) {
+
+                                                $get_cat_query = "SELECT * FROM media_category WHERE category_date = '$upload_date'";
+                                                $select_categories = mysqli_query($connection, $get_cat_query);
+
+                                                $count = mysqli_num_rows($select_categories);
+                                                if ($count > 0) {
+                                                    while ($row = mysqli_fetch_assoc($select_categories)) {
+
+                                                        $cat_id = $row['id'];
+                                                        $cat_date = $row['category_date'];
+
+
+                                                        if($cat_date = $upload_date){}
+
+
+                                                        for ($i = 0; $i < count($name_array); $i++) {
+
+                                                          $name =  $name_array[$i];
+                                                            $upload_query = "INSERT INTO media(media_name,media_category,media_date) VALUES('$name','$cat_id','$cat_date')";
+                                                            $add_images = mysqli_query($connection, $upload_query);
+                                                            if ($add_images) {
+                                                            }else{
+                                                              // echo "add images failed ". mysqli_error($connection)."<br>";
+                                                            }
+                                                            $move =  move_uploaded_file($tmp_name_array[$i], "images/".$upload_date."/$name");
+                                                          }
+                                                            if ($move ) {
+                                                                echo "<div class='alert alert-success' role='alert'>
+  Your a genius ".  $_SESSION['username'] ." upload was a success!
+</div><br>";
+
+
+                                                            } else {
+                                                                echo "<div class='alert alert-danger' role='alert'>
+  Too bad ".  $_SESSION['username'] ." upload Failed!
+</div><br>";
+
+                                                            }
+                                                    }
+                                                }else{
+                                                  // echo "select category failed". mysqli_error($connection)."<br>";
+                                                }
+
+                                            }else{
+                                              // echo "add category failed".mysqli_error($connection)."<br>";
+                                            }
+
+                                        } else {
+                                            echo "<div class='alert alert-danger' role='alert'>
+oops! ". $_SESSION['username'] >" Directory creation failed!
+</div><br>";
+                                        }
+
+                                }
+                              }
+                            }
+                            ?>
+
+                              <form action="" method="post" enctype="multipart/form-data">
 
                                   <div class="form-group">
                                       <label >File input</label>

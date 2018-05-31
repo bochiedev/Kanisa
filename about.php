@@ -8,20 +8,11 @@
 
 	<title>Bahati Martyrs | About Us</title>
 
-	<!-- Loading third party fonts -->
-	<link href="fonts/novecento-font/novecento-font.css" rel="stylesheet" type="text/css">
-	<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
-	    crossorigin="anonymous"></script>
+<?php
+include_once "_includes/head_tags.php";
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	    crossorigin="anonymous">
-
-
-	<!-- Loading main css file -->
-	<link rel="stylesheet" href="css/style.css">
+?>
 
 
 </head>
@@ -78,18 +69,20 @@
         <div class="container">
 
 
-		<section class="row ministers text-center" style="min-height:350px;">
+		<section class="row ministers text-center" style="min-height:350px; margin-bottom:20px;">
 
 				<div class="col-md-12" style="margin: 20px 0px;">
 					<h1 class="card-title">- Our Ministers -</h1>
+<p>These are our very able spiritual leaders</p>
 				</div>
 
 
 				<div class="col-md-6 d-flex justify-content-around" style="margin: auto;">
 					<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="media/images/img-6.jpg" alt="Card image cap">
+  <img class="card-img-top" src="images/Rev-Karanja.jpg" alt="rev image">
   <div class="card-body">
     <h5 class="card-title">Rev Albert Karanja</h5>
+		<p>Parish Moderator</p>
   </div>
 </div>
 					</div>
@@ -97,9 +90,10 @@
 				<div class="col-md-6 d-flex justify-content-around" style="margin: auto;">
 
 					<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="media/images/img-6.jpg" alt="Card image cap">
+  <img class="card-img-top" src="images/Rev-Dawn.jpg" alt="rev image">
   <div class="card-body">
     <h5 class="card-title">Rev Dawn Gikandi</h5>
+		<p>Minister</p>
   </div>
 </div>
 

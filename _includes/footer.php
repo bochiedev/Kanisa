@@ -10,11 +10,12 @@
                                 mollitia, iusto odio dignissimos.</p> -->
                             <ul class="address">
                                 <li style="margin-bottom:20px;">
-                                    <i class="fa fa-map-marker" style="margin-right:20px;" ></i>Bahati Nairobi,Kenya</li>
+                                  <i class="fas fa-address-book" style="margin-right:20px;" ></i><span>P.O. Box 72582 - 00200, Nairobi, Kenya</span></li>
                                 <li style="margin-bottom:20px;">
-                                    <i class="fa fa-phone" style="margin-right:20px;" ></i> +254 722241161</li>
+                                    <i class="fa fa-phone" style="margin-right:20px;" ></i><span> 020 351 3088 </span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span> 020 230 9936 </span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span> 0733 561 285</span>
+                                  </li>
                                 <li>
-                                    <i class="fa fa-envelope" style="margin-right:20px;" ></i> info@yourchurch.com</li>
+                                    <i class="fa fa-envelope" style="margin-right:20px;" ></i> <span> prayer@pceabahati.org </span></li>
                             </ul>
                         </div>
 					</div>
@@ -109,19 +110,15 @@ if(!$mail){
 <!-- Bootstrap -->
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/plugins.js"></script>
 <script src="js/jquery-1.11.1.min.js"></script>
-
-    <script src="js/app.js"></script>
+<script src="js/app.js"></script>
 
 
 
 </body>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-<script src="calendar.js"></script>
 
 </html>

@@ -9,32 +9,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
-    <title>Bahati Martyr's</title>
-
-    <!-- Loading third party fonts -->
-    <link href="fonts/novecento-font/novecento-font.css" rel="stylesheet" type="text/css">
-    <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
-        crossorigin="anonymous"></script>
-
-
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-
-    <!-- font-awesome  -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
-        crossorigin="anonymous">
-
-    <!-- My css -->
-    <link rel="stylesheet" href="css/style.css">
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <title>Bahati Martyr's | Home</title>
 
 
 
+
+<?php
+include_once "_includes/head_tags.php";
+
+?>
 
 </head>
 
@@ -154,7 +137,7 @@
                             <div class="col-md-3 col-xs-6" style="padding:0px;">
 
                                     <div class="col-md-10 col-md-offset-1">
-                                    <img height="200px" width="100%" style="overflow:hidden;" src="images/<?php echo $media_name;?>.jpg"></img>
+                                    <img height="200px" width="100%" style="overflow:hidden;" src="admin/images/<?php echo $media_date."/".  $media_name;?>"></img>
                                     <div class="card-body">
                                         <h3 class="card-title">
                                             <a href="media.php">
@@ -177,8 +160,27 @@
                 <div class="container-fluid">
                     <div class="row">
 
+
+                                                      <?php
+
+                                                  $videoquery = "SELECT * FROM video ORDER BY id DESC LIMIT 1 ";
+                                                  $videoresult = mysqli_query($connection, $videoquery);
+
+
+                                                      while($row = mysqli_fetch_assoc($videoresult)) {
+
+
+                                                          $video_url =  $row["video_url"];
+                                                          $video_message = $row["video_message"];
+
+
+
+
+
+                                                  ?>
+
                         <div class="col-md-6" style="margin-bottom: 20px;">
-                            <iframe class="col-md-12 " src="https://www.youtube.com/embed/uNCr7NdOJgw?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=0"
+                            <iframe class="col-md-12 " src="<?php echo $video_url; ?>"
                                 frameborder="0" allowfullscreen="1" style="height: 388.125px;"></iframe>
                         </div>
                         <div class="col-md-6 ">
@@ -187,13 +189,14 @@
                                 Word from Our Ministers
                             </h2>
                             <p>
-
+                              <?php echo $video_message; ?>
                             </p>
 
 
 
 
                         </div>
+                      <?php } ?>
 
                     </div>
                 </div>
