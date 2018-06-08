@@ -5,9 +5,6 @@
                     <div class="col-md-4">
                         <div class="widget">
                             <h3 class="widget-title">Our address</h3>
-                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi perspiciatis magnam, ab ipsa laboriosam
-                                tempore tenetur, aliquid repellat, ex cum dicta reiciendis accusamus. Omnis repudiandae quasi
-                                mollitia, iusto odio dignissimos.</p> -->
                             <ul class="address">
                                 <li style="margin-bottom:20px;">
                                   <i class="fas fa-address-book" style="margin-right:20px;" ></i><span>P.O. Box 72582 - 00200, Nairobi, Kenya</span></li>
@@ -47,18 +44,17 @@ if(isset($_POST['mail'])){
 
 
 $message = $_POST['message'];
-$name = $_POST['user_name'];
+$subject = $_POST['subject'];
 $email = $_POST['email'];
 
-$to = "bochiegfx@gmail.com";
-$subject = "Message From". $name ;
+$to = "comments@pceabahati.org";
 
 // Always set content-type when sending HTML email
 $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
-$headers .= 'From: <jamohsize@gmail.com>' . "\r\n";
+$headers .= 'From:'. $email . "\r\n";
 
 $mail = mail($to,$subject,$message,$headers);
 
@@ -75,7 +71,7 @@ if(!$mail){
                             <form action="" method="post" class="contact-form">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="text" name="user_name" placeholder="Your name...">
+                                        <input type="text" name="subject" placeholder="Subject...">
                                     </div>
                                     <div class="col-md-6">
                                         <input type="text" name="email" placeholder="Email...">

@@ -15,7 +15,7 @@
 
 
 <?php
-include_once "_includes/head_tags.php";
+include "_includes/head_tags.php";
 
 ?>
 </head>
@@ -24,7 +24,7 @@ include_once "_includes/head_tags.php";
 <body>
 	<div class="site-content">
 		<?php
-  include_once "_includes/header.php";
+  include "_includes/header.php";
   ?>
 		<!-- .site-header -->
 
@@ -69,12 +69,12 @@ $event_date = $_POST['eventdate'];
 
 
 
-  $query = "SELECT * FROM events ";
+  $query = "SELECT * FROM events WHERE event_date = '$event_date'  ";
   $result = mysqli_query($connection, $query);
 
 
     while($row = mysqli_fetch_assoc($result)) {
-        if( $row["event_date"] == $event_date){
+
 
           $event_name2 =  $row["event_name"];
           $event_date2 = $row["event_date"];
@@ -104,10 +104,7 @@ $event_date = $_POST['eventdate'];
 </div>
 </div>
 <?php
- }else{
-
-  echo "<h3>No Events on the Days</h3>";
-}
+ 
 }
 }
 }

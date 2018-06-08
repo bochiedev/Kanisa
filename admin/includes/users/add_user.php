@@ -1,4 +1,4 @@
-<div class="container">  <?php
+<?php
 
 
      if(isset($_POST['create_user'])) {
@@ -98,4 +98,3 @@
 
 
   </form>
-</div>

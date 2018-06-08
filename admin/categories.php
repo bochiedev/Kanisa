@@ -67,130 +67,126 @@ return document.getElementById(el);
 
 
 <?php
-include_once "_includes/header.php";
+include "_includes/header.php";
 ?>
 
 <main class="main-container">
-  <div class="container">
 
 
-    <div id="page-wrapper">
-
+    <!-- Content container -->
     <div class="container-fluid">
 
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-12">
-
-
-                <h1 class="page-header">
-                    Welcome to admin
-                    <small>Author</small>
-                </h1>
-
-
-                <div class="col-xs-6">
-
-                <?php insert_categories();  ?>
-
-        <form action="" method="post">
-          <div class="form-group">
-             <label for="cat-title">Add Category</label>
-              <input type="text" class="form-control" name="cat_title">
-          </div>
-           <div class="form-group">
-              <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
-          </div>
-
-        </form>
-
-        <?php // UPDATE AND INCLUDE QUERY
-
-        if(isset($_GET['edit'])) {
-
-            $cat_id = $_GET['edit'];
-
-            include "includes/update_categories.php";
-
-
-        }
-
-
-        ?>
-
-
-        </div><!--Add Category Form-->
-
-                <div class="col-xs-6">
-        <table class="table table-bordered table-hover">
-
-
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Category Title</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            <?php
-
-
-        $query = "SELECT * FROM categories";
-        $select_categories = mysqli_query($connection,$query);
-
-        while($row = mysqli_fetch_assoc($select_categories)) {
-        $cat_id = $row['cat_id'];
-        $cat_title = $row['cat_title'];
-
-        echo "<tr>";
-
-        echo "<td>{$cat_id}</td>";
-        echo "<td>{$cat_title}</td>";
-       echo "<td><a href='categories.php?delete={$cat_id}'>Delete</a></td>";
-       echo "<td><a href='categories.php?edit={$cat_id}'>Edit</a></td>";
-        echo "</tr>";
-
-        }
+        <!-- Page section: preview -->
+        <div class="section">
+            <div class="row">
+                <div class="col-xs-12 col-md-6" style="margin-top:20px; ">
 
 
 
+                                <div class="col-xs-12 col-md-6">
 
-    ?>
+                                <?php insert_categories();  ?>
+
+                        <form action="" method="post">
+                          <div class="form-group">
+                             <label for="cat-title">Add Category</label>
+                              <input type="text" class="form-control" name="cat_title">
+                          </div>
+                           <div class="form-group">
+                              <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
+                          </div>
+
+                        </form>
+
+                        <?php // UPDATE AND INCLUDE QUERY
+
+                        if(isset($_GET['edit'])) {
+
+                            $cat_id = $_GET['edit'];
+
+                            include "includes/update_categories.php";
+
+
+                        }
+
+
+                        ?>
+
+
+                        </div><!--Add Category Form-->
+
+                                <div class="col-xs-12 col-md-12">
+                        <table class="table table-bordered table-hover">
+
+
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Category Title</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            <?php
+
+
+                        $query = "SELECT * FROM events";
+                        $select_events = mysqli_query($connection,$query);
+
+                        while($row = mysqli_fetch_assoc($select_events)) {
+                        $event_id = $row['id'];
+                        $event_title = $row['event_name'];
+                        $event_date = $row['event_date'];
+                        $event_location = $row['event_location'];
+                        $event_time = $row['event_time'];
+                        $event_info = $row['event_info'];
 
 
 
+                        echo "<tr>";
 
-            </tbody>
-        </table>
+                        echo "<td>{$event_id}</td>";
+                        echo "<td>{$event_title}</td>";
+                        echo "<td>{$event_date}</td>";
+                       echo "<td><a href='events.php?delete={$event_id}'>Delete</a></td>";
+                       echo "<td><a href='events.php?edit={$event_id}'>Edit</a></td>";
+                        echo "</tr>";
+
+                        }
 
 
 
 
-                    </div>
+                    ?>
 
 
-                </div>
-            </div>
-            <!-- /.row -->
+
+
+                            </tbody>
+                        </table>
+
+
+
+
+                                    </div>
+
+
+
+                    <?php
+
+                    deleteCategories();
+
+                     ?>
+
+
 
         </div>
-        <!-- /.container-fluid -->
+      </div>
+        <!-- /Page section: preview -->
 
-    </div>
-
-
-
-    <?php
-
-    deleteCategories();
-
-     ?>
-
-  </div>
-
-
+      </div>
 </main>
+
 
 <script src="assets/js/jquery-2.2.0.min.js"></script>
 <script src="assets/components/jquery-ui-1.12.1/jquery-ui.min.js"></script>

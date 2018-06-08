@@ -1,18 +1,17 @@
 <?php session_start();
-
       include "_includes/db.php";
       include "functions.php";
       CheckLoggedIn();
 
-
-      ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Page title -->
-    <title>Bahati | Admin</title>
-    <!-- /Page title -->
+    <title>Bahat- Admin | Dashboard</title>
+
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -38,70 +37,97 @@
     <link rel="stylesheet" href="assets/css/theme.css">
     <!-- /Styles -->
 
-
-  </head>
-  <body class="sidebar-expanded">
-
-
-  <!-- Preloader -->
-  <div class="preloader loader"></div>
-  <!-- /Preloader -->
-
-  <!-- Header -->
-
-  <?php
-  include "_includes/header.php";
-  ?>
-  <main class="main-container">
+</head>
+<body class="sidebar-expanded">
 
 
-      <!-- Content container -->
-      <div class="container-fluid">
+<!-- Preloader -->
+<!-- <div class="preloader loader"></div> -->
+<!-- /Preloader -->
+<?php include "_includes/header.php" ?>
 
-          <!-- Page section: preview -->
-          <div class="section">
-              <div class="row">
-                  <div class="col-xs-12 col-md-12" style="margin-top:20px;">
 
-                    <?php
+<!-- Main container -->
+<main class="main-container">
 
-                    if(isset($_GET['source'])){
 
-                    $source = $_GET['source'];
+    <!-- Content container -->
+    <div class="container-fluid">
+      <!-- Page section: sizes -->
+        <div class="section">
+            <div class="row">
+              <div class="col-xs-12 col-md-12" style="margin-top:20px;">
+                <div class="panel panel-white demo-panel col-xs-12">
+                    <div class="panel-heading">
+                        <div class="panel-title">Add Video</div>
+                    </div>
+                    <div class="panel-body pb">
 
-                    } else {
+                      <?php
+                      if (isset($_POST['video'])){
+                          $video_url = escape($_POST['video_url']);
+                          $video_message = escape($_POST['video_message']);
 
-                    $source = '';
+                          if(isset($_SESSION['username'])){
+                            $username = $_SESSION['username'];
+                          }else{
+                            $username = "";
 
-                    }
+                          }
 
-                    switch($source) {
-                        case 'add_user';
-                         include "includes/users/add_user.php";
-                        break;
-                        case 'edit_user';
-                        include "includes/users/edit_user.php";
-                        break;
-                        case 'delete';
-                        include "includes/users/delete_modal.php";
-                        break;
-                        default:
-                        include "includes/users/view_all_users.php";
-                        break;
-                    }
 
-                      deleteUser();
-                    ?>
+                          $video_query = "INSERT INTO video(video_url, video_message) VALUES('$video_url','$video_message')";
+                          $add_video = mysqli_query($connection, $video_query);
+
+                          confirmQuery($add_video);
+                          if($add_video){
+
+                          echo "<div class='alert alert-success' role='alert'>
+                          Your a genius ".  $username ." video successfully added!
+                          </div>";
+                        }else{
+                          echo "<div class='alert alert-danger' role='alert'>
+                          Ooops! ".  $username ." something went wrong!
+                          </div>";
+
+                        }
+
+                      }
+                      ?>
+
+                      <form action="" method="post" >
+                          <div class="form-group">
+                              <label >Video Link</label>
+                              <input type="text" name="video_url"  class="form-control" placeholder="video link">
+                          </div>
+                          <div class="form-group">
+                              <label >Word from minister</label>
+                              <textarea name="video_message" class="form-control"></textarea>
+                          </div>
+
+
+                          <button type="submit" name="video" class="btn btn-success">Submit</button>
+                      </form>
+                        <!-- /Form -->
+
+                    </div>
+                </div>
+
+
 
               </div>
-          </div>
+
+
+            </div>
         </div>
+        <!-- /Page section: sizes -->
+
+    </div>
+    <!-- /Content container -->
 
 
-        </div>
-  </main>
-
-
+</main>
+<!-- /Main container -->
 
 
 
@@ -128,5 +154,5 @@
 
 </body>
 
-<!-- Mirrored from vtdes.ru/demo/wgboard/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 May 2018 09:18:46 GMT -->
+<!-- Mirrored from vtdes.ru/demo/wgboard/modals.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 May 2018 09:18:47 GMT -->
 </html>

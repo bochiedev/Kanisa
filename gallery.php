@@ -57,7 +57,7 @@ $result = mysqli_query($connection, $query);
         if($row > 0){
 
 ?>
- <div class="col-md-3 col-xs-3">
+ <div class="col-md-3 col-xs-12">
 
                 <img class="img-thumbnail img-fluid"
                     src="admin/images/<?php echo $media_date."/".$media_name;?>" />

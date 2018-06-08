@@ -47,7 +47,7 @@
 
                     <!-- Profile avatar -->
                     <a href="#" class="dropdown-toggle nav-profile" data-toggle="dropdown">
-                        <span class="profile-name"><?php echo $_SESSION['username'] ?></span>
+                        <span class="profile-name"><?php if(isset($_SESSION['username'])){echo $_SESSION['username'];} ?></span>
                         <span class="caret"></span>
                         <div class="profile-avatar">
                             <div class="profile-avatar-image">
@@ -88,25 +88,32 @@
 
 
                 <li>
-                    <a href="home.php" class="sb-nav-item">
+                    <a href="dashboard.php" class="sb-nav-item">
                         <i class="icon fa fa-square"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="media.php" class="sb-nav-item">
+                    <a href="gallery.php" class="sb-nav-item">
                         <i class="icon fa fa-list-alt"></i>
-                        <span>Media</span>
+                        <span>Gallery</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="categories.php" class="sb-nav-item">
+                    <a href="events.php" class="sb-nav-item">
                         <i class="icon fa fa-table"></i>
-                        <span>Categories</span>
+                        <span>Events</span>
                     </a>
                 </li>
+                <li>
+                    <a href="video.php" class="sb-nav-item">
+                        <i class="icon fa fa-table"></i>
+                        <span>Video</span>
+                    </a>
+                </li>
+
                 <li class="sb-dropdown">
                     <a href="#" class="sb-nav-item sb-dropdown-toggle">
                         <i class="icon fa fa-home"></i>

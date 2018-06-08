@@ -1,6 +1,4 @@
 
-<div class="container">
-
   <?php  // Get request user id and database data extraction
 
 
@@ -197,5 +195,3 @@
 
 
   </form>
-
-  </div>

@@ -1,18 +1,17 @@
 <?php session_start();
-
       include "_includes/db.php";
       include "functions.php";
       CheckLoggedIn();
-
-
-      ?>
+      
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Page title -->
-    <title>Bahati | Admin</title>
-    <!-- /Page title -->
+    <title>Bahat- Admin | Dashboard</title>
+
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -38,70 +37,36 @@
     <link rel="stylesheet" href="assets/css/theme.css">
     <!-- /Styles -->
 
-
-  </head>
-  <body class="sidebar-expanded">
-
-
-  <!-- Preloader -->
-  <div class="preloader loader"></div>
-  <!-- /Preloader -->
-
-  <!-- Header -->
-
-  <?php
-  include "_includes/header.php";
-  ?>
-  <main class="main-container">
+</head>
+<body class="sidebar-expanded">
 
 
-      <!-- Content container -->
-      <div class="container-fluid">
+<!-- Preloader -->
+<!-- <div class="preloader loader"></div> -->
+<!-- /Preloader -->
+<?php include "_includes/header.php" ?>
 
-          <!-- Page section: preview -->
-          <div class="section">
-              <div class="row">
-                  <div class="col-xs-12 col-md-12" style="margin-top:20px;">
 
-                    <?php
+<!-- Main container -->
+<main class="main-container">
 
-                    if(isset($_GET['source'])){
 
-                    $source = $_GET['source'];
+    <!-- Content container -->
+    <div class="container-fluid">
 
-                    } else {
+        <!-- Page section: preview -->
+        <div class="section">
+            <div class="row">
+                <div class="col-xs-12 col-md-12" style="margin-top:20px;">
 
-                    $source = '';
-
-                    }
-
-                    switch($source) {
-                        case 'add_user';
-                         include "includes/users/add_user.php";
-                        break;
-                        case 'edit_user';
-                        include "includes/users/edit_user.php";
-                        break;
-                        case 'delete';
-                        include "includes/users/delete_modal.php";
-                        break;
-                        default:
-                        include "includes/users/view_all_users.php";
-                        break;
-                    }
-
-                      deleteUser();
-                    ?>
-
-              </div>
-          </div>
+            </div>
         </div>
+      </div>
+        <!-- /Page section: preview -->
 
-
-        </div>
-  </main>
-
-
+      </div>
+</main>
+<!-- /Main container -->
 
 
 
@@ -128,5 +93,5 @@
 
 </body>
 
-<!-- Mirrored from vtdes.ru/demo/wgboard/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 May 2018 09:18:46 GMT -->
+<!-- Mirrored from vtdes.ru/demo/wgboard/modals.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 May 2018 09:18:47 GMT -->
 </html>

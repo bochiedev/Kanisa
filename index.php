@@ -199,7 +199,7 @@
 
                                 <?php
 
-                            $query = "SELECT * FROM events ORDER BY event_date DESC LIMIT 5 ";
+                            $query = "SELECT * FROM events ORDER BY event_date DESC LIMIT 3 ";
                             $result = mysqli_query($connection, $query);
 
 

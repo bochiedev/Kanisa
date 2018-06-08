@@ -33,33 +33,6 @@
     <link rel="stylesheet" href="assets/components/jqvmap/dist/jqvmap.min.css">
     <link rel="stylesheet" href="assets/css/theme.css">
     <!-- /Styles -->
-    <script>
-    function _(el){
-return document.getElementById(el);
-    }
-    function uploadFile(){
-      var =  _('file').files[0];
-      var formdata =  new FormData();
-      formdata.append('file', file);
-      var ajax = new XMLHttpRequest();
-      ajax.upload.addEventListener('progress', progressHandler, false);
-      ajax.addEventListener('load', completeHandler, false);
-      ajax.addEventListener('error', errorHandler, false);
-      ajax.addEventListener('abort', abortHandler, false);
-      ajax.send(formdata);
-    }
-    function progressHandler(event){
-      var percent = (event.loaded / event.total) *100;
-      _('progressbar').value = Math.round(percent);
-    }
-    function completeHandler(event){
-      _('progressbar').value = 0;
-    }
-
-
-
-
-    </script>
 
 </head>
 <body class="sidebar-expanded">
@@ -93,7 +66,7 @@ include_once "_includes/header.php";
 
                     <!-- Page header -->
                     <div class="page-header">
-                        <h1 class="page-title">Welcome back <?php echo $_SESSION['username'] ?></h1>
+                        <h1 class="page-title">Welcome back <?php if(isset($_SESSION['username'])){echo $_SESSION['username'];} ?></h1>
                     </div>
                     <!-- /Page header -->
 
@@ -103,12 +76,11 @@ include_once "_includes/header.php";
     </header>
     <!-- /Page heading -->
 
-
      <div class="section container">
           <div class="row">
 
 
-                      <div class="panel panel-white demo-panel col-md-6">
+                      <div class="panel panel-white demo-panel col-xs-6">
                           <div class="panel-heading">
                               <div class="panel-title">Upload slideshow images</div>
                           </div>
@@ -128,7 +100,7 @@ include_once "_includes/header.php";
 
                           </div>
                       </div>
-                      <div class="panel panel-white demo-panel col-md-6">
+                      <div class="panel panel-white demo-panel col-xs-6">
                           <div class="panel-heading">
                               <div class="panel-title">Edit theme</div>
                           </div>
@@ -156,6 +128,7 @@ include_once "_includes/header.php";
 
                     </div>
                   </div>
+                  
 
 
 
@@ -166,7 +139,7 @@ include_once "_includes/header.php";
                   <div class="section container">
                        <div class="row">
 
-                         <div class="panel panel-white demo-panel col-md-6">
+                         <div class="panel panel-white demo-panel col-xs-6">
                              <div class="panel-heading">
                                  <div class="panel-title">Upload pastor video</div>
                              </div>
@@ -201,7 +174,7 @@ include_once "_includes/header.php";
                       <div class="section container">
                            <div class="row">
 
-                      <div class="panel panel-white demo-panel col-md-6">
+                      <div class="panel panel-white demo-panel col-xs-6">
                           <div class="panel-heading">
                               <div class="panel-title">Update events</div>
                           </div>
@@ -233,7 +206,7 @@ include_once "_includes/header.php";
 
                           </div>
                       </div>
-                      <div class="panel panel-white demo-panel col-md-6">
+                      <div class="panel panel-white demo-panel col-xs-6">
                           <div class="panel-heading">
                               <div class="panel-title">Gallery update</div>
                           </div>
@@ -339,6 +312,9 @@ oops! ". $_SESSION['username'] >" Directory creation failed!
 
                           </div>
                       </div>
+                    </div>
+                  </div>
+
 
 
 
