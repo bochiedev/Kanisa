@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
-	<title>Bahati Martyrs | About Us</title>
+	<title>Bahati Martyrs' | About Us</title>
 
 
 <?php
@@ -81,7 +81,7 @@ include_once "_includes/head_tags.php";
 					<div class="card" style="width: 18rem;">
   <img class="card-img-top" src="images/pastoral/Rev-Karanja.jpg" alt="rev image">
   <div class="card-body">
-    <h5 class="card-title">Rev Albert Karanja</h5>
+    <h5 class="card-title">Reverend Albert Karanja</h5>
 		<p>Parish Moderator</p>
   </div>
 </div>
@@ -92,8 +92,8 @@ include_once "_includes/head_tags.php";
 					<div class="card" style="width: 18rem;">
   <img class="card-img-top" src="images/pastoral/Rev-Dawn.jpg" alt="rev image">
   <div class="card-body">
-    <h5 class="card-title">Rev Dawn Gikandi</h5>
-		<p>Minister</p>
+    <h5 class="card-title">Reverend Dawn Gikandi</h5>
+		<p>Parish Minister</p>
   </div>
 </div>
 
