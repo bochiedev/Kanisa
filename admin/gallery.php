@@ -2,7 +2,7 @@
       include "_includes/db.php";
       include "functions.php";
       CheckLoggedIn();
-      
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +77,7 @@
                                 $error_array = $_FILES['file_array']['error'];
 
 
-                                $name1 = array_values( $name_array)[0];
+                                $name1 = array_values($name_array)[0];
 
                                 if (!is_dir("images/".$upload_date."/")) {
                                     $makedir = mkdir("images/".$upload_date."/");
@@ -86,61 +86,68 @@
                                         $add_category = mysqli_query($connection, $cat_query);
 
                                         if ($add_category) {
-
                                             $get_cat_query = "SELECT * FROM media_category WHERE category_date = '$upload_date'";
                                             $select_categories = mysqli_query($connection, $get_cat_query);
 
                                             $count = mysqli_num_rows($select_categories);
                                             if ($count > 0) {
                                                 while ($row = mysqli_fetch_assoc($select_categories)) {
-
                                                     $cat_id = $row['id'];
                                                     $cat_date = $row['category_date'];
 
 
-                                                    if($cat_date = $upload_date){}
+                                                    if ($cat_date = $upload_date) {
+                                                    }
 
 
                                                     for ($i = 0; $i < count($name_array); $i++) {
-
-                                                      $name =  $name_array[$i];
+                                                        $name =  $name_array[$i];
                                                         $upload_query = "INSERT INTO media(media_name,media_category,media_date) VALUES('$name','$cat_id','$cat_date')";
                                                         $add_images = mysqli_query($connection, $upload_query);
                                                         if ($add_images) {
-                                                        }else{
-                                                          // echo "add images failed ". mysqli_error($connection)."<br>";
+                                                        } else {
+                                                            // echo "add images failed ". mysqli_error($connection)."<br>";
                                                         }
                                                         $move =  move_uploaded_file($tmp_name_array[$i], "images/".$upload_date."/$name");
-                                                      }
-                                                        if ($move ) {
-                                                            echo "<div class='alert alert-success' role='alert'>
+                                                    }
+                                                    if ($move) {
+                                                        // $target_file = str_replace(BASE_URI, '', $UPLOAD_DIR.$name.$ext);
+                                                        // $resize_fileSM = $UPLOAD_DIR.$name.'-sM'.$ext;
+                                                        // $resize_fileLG = $UPLOAD_DIR.$name.'-lG'.$ext;
+                                                        // $wS = 208;
+                                                        // $wL = 390;
+                                                        //
+                                                        // img_resize($target_file, $resize_fileSM, $wS, $wS);
+                                                        // img_resize($target_file, $resize_fileLG, $wL, $wL);
+                                                        //
+                                                        // $imageSM = str_replace(BASE_URI, '', $resize_fileSM);
+                                                        // $imageLG = str_replace(BASE_URI, '', $resize_fileLG);
+                                                        //
+                                                        // //delete the orginal
+                                                        //
+                                                        // unlink($target_file);
+                                                        echo "<div class='alert alert-success' role='alert'>
 Your a genius ".  $_SESSION['username'] ." upload was a success!
 </div><br>";
-
-
-                                                        } else {
-                                                            echo "<div class='alert alert-danger' role='alert'>
+                                                    } else {
+                                                        echo "<div class='alert alert-danger' role='alert'>
 Too bad ".  $_SESSION['username'] ." upload Failed!
 </div><br>";
-
-                                                        }
+                                                    }
                                                 }
-                                            }else{
-                                              // echo "select category failed". mysqli_error($connection)."<br>";
+                                            } else {
+                                                // echo "select category failed". mysqli_error($connection)."<br>";
                                             }
-
-                                        }else{
-                                          // echo "add category failed".mysqli_error($connection)."<br>";
+                                        } else {
+                                            // echo "add category failed".mysqli_error($connection)."<br>";
                                         }
-
                                     } else {
                                         echo "<div class='alert alert-danger' role='alert'>
 oops! ". $_SESSION['username'] >" Directory creation failed!
 </div><br>";
                                     }
-
+                                }
                             }
-                          }
                         }
                         ?>
 
