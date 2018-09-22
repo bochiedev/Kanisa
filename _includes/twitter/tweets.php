@@ -2,10 +2,10 @@
 
     <?php
 
-$consumer_key = "VPRnLExGwd08VbXfrV8jQkect";
-$consumer_secret = "EkGfj1eypSmsHPRvPns6OdSEP5RoaKa6SAc0OCoVCVW6K0S828";
-$access_token= "428477424-IUTSOyIco47FTH1elOy8S4rtGfQpt7MmOVIHzWH8";
-$access_token_secret= "h9Rf55sdbvpcnn0PMY0nByTvo9pqvPKfEOkAHtdL8V12g";
+$consumer_key = "";
+$consumer_secret = "";
+$access_token= "";
+$access_token_secret= "";
 
 require "vendor/autoload.php";
 
