@@ -112,6 +112,7 @@ if(!$mail){
 <script src="js/plugins.js"></script>
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/app.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 

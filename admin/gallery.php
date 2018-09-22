@@ -1,6 +1,7 @@
 <?php session_start();
       include "_includes/db.php";
       include "functions.php";
+      include "_includes/image_comp.php";
       CheckLoggedIn();
 
 ?>
@@ -68,6 +69,12 @@
                         if (isset($_POST['upload'])) {
                             $upload_date = escape($_POST['upload_date']);
 
+                            if (isset($_POST['event'])) {
+                                $category_name = escape($_POST['event']);
+                            } else {
+                                $category_name = $upload_date;
+                            }
+
 
                             if (isset($_FILES['file_array'])) {
                                 $name_array = $_FILES['file_array']['name'];
@@ -79,10 +86,10 @@
 
                                 $name1 = array_values($name_array)[0];
 
-                                if (!is_dir("images/".$upload_date."/")) {
-                                    $makedir = mkdir("images/".$upload_date."/");
+                                if (!is_dir("images/".$category_name."/")) {
+                                    $makedir = mkdir("images/".$category_name."/");
                                     if ($makedir) {
-                                        $cat_query = "INSERT INTO media_category(category_date, category_image) VALUES('$upload_date','$name1')";
+                                        $cat_query = "INSERT INTO media_category(category_name,category_date, category_image) VALUES('$category_name','$upload_date','$name1')";
                                         $add_category = mysqli_query($connection, $cat_query);
 
                                         if ($add_category) {
@@ -108,24 +115,11 @@
                                                         } else {
                                                             // echo "add images failed ". mysqli_error($connection)."<br>";
                                                         }
-                                                        $move =  move_uploaded_file($tmp_name_array[$i], "images/".$upload_date."/$name");
+                                                        $folder_image = "images/".$category_name."/$name";
+                                                        $move =  move_uploaded_file($tmp_name_array[$i], "images/".$category_name."/$name");
+                                                        resize_image($folder_image, 200, 200);
                                                     }
                                                     if ($move) {
-                                                        // $target_file = str_replace(BASE_URI, '', $UPLOAD_DIR.$name.$ext);
-                                                        // $resize_fileSM = $UPLOAD_DIR.$name.'-sM'.$ext;
-                                                        // $resize_fileLG = $UPLOAD_DIR.$name.'-lG'.$ext;
-                                                        // $wS = 208;
-                                                        // $wL = 390;
-                                                        //
-                                                        // img_resize($target_file, $resize_fileSM, $wS, $wS);
-                                                        // img_resize($target_file, $resize_fileLG, $wL, $wL);
-                                                        //
-                                                        // $imageSM = str_replace(BASE_URI, '', $resize_fileSM);
-                                                        // $imageLG = str_replace(BASE_URI, '', $resize_fileLG);
-                                                        //
-                                                        // //delete the orginal
-                                                        //
-                                                        // unlink($target_file);
                                                         echo "<div class='alert alert-success' role='alert'>
 Your a genius ".  $_SESSION['username'] ." upload was a success!
 </div><br>";
@@ -161,6 +155,10 @@ oops! ". $_SESSION['username'] >" Directory creation failed!
                               <div class="form-group">
                                   <label >Date</label>
                                   <input type="date" data-date-format="YYYY-MM-DD" name="upload_date"  class="form-control" placeholder="date">
+                              </div>
+                              <div class="form-group">
+                                  <label >Event Name <small class="text-info">(only for event images)</small></label>
+                                  <input type="text" name="event"  class="form-control" placeholder="Enter Event Name">
                               </div>
 
 

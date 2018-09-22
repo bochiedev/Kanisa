@@ -1,7 +1,23 @@
 <?php
 include "db.php";
+include "image_comp.php";
+
 if (isset($_POST['upload'])) {
+
     $upload_date = $_POST['upload_date'];
+
+
+
+    if(isset($_POST['event'])){
+
+      $category_name = $_POST['event'];
+
+
+    }else{
+
+      $category_name = $upload_date;
+
+    }
 
 
     if (isset($_FILES['file_array'])) {
@@ -14,10 +30,10 @@ if (isset($_POST['upload'])) {
 
         $name1 = array_values( $name_array)[0];
 
-        if (!is_dir("../images/".$upload_date."/")) {
-            $makedir = mkdir("../images/".$upload_date."/");
+        if (!is_dir("../images/".$category_name."/")) {
+            $makedir = mkdir("../images/".$category_name."/");
             if ($makedir) {
-                $cat_query = "INSERT INTO media_category(category_date, category_image) VALUES('$upload_date','$name1')";
+                $cat_query = "INSERT INTO media_category(category_name,category_date, category_image) VALUES('$category_name','$upload_date','$name1')";
                 $add_category = mysqli_query($connection, $cat_query);
 
                 if ($add_category) {
@@ -45,8 +61,14 @@ if (isset($_POST['upload'])) {
                                 }else{
                                   // echo "add images failed ". mysqli_error($connection)."<br>";
                                 }
-                                $move =  move_uploaded_file($tmp_name_array[$i], "../images/".$upload_date."/$name");
+
+                                $folder_image = "../images/".$category_name."/$name";
+                                $move =  move_uploaded_file($tmp_name_array[$i], $folder_image );
+
+                                resize_image($folder_image, 200, 200);
+
                                 if ($move ) {
+
                                     echo "upload is complete"."<br>";
                                 } else {
                                     echo "upload failed"."<br>";

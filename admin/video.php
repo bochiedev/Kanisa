@@ -59,14 +59,14 @@
               <div class="col-xs-12 col-md-12" style="margin-top:20px;">
                 <div class="panel panel-white demo-panel col-xs-12">
                     <div class="panel-heading">
-                        <div class="panel-title">Add Video</div>
+                        <div class="panel-title">Add Weekly Message</div>
                     </div>
                     <div class="panel-body pb">
 
                       <?php
-                      if (isset($_POST['video'])){
-                          $video_url = escape($_POST['video_url']);
-                          $video_message = escape($_POST['video_message']);
+                      if (isset($_POST['message'])){
+                          // $video_url = escape($_POST['video_url']);
+                          $message = escape($_POST['message_text']);
 
                           if(isset($_SESSION['username'])){
                             $username = $_SESSION['username'];
@@ -76,14 +76,14 @@
                           }
 
 
-                          $video_query = "INSERT INTO video(video_url, video_message) VALUES('$video_url','$video_message')";
-                          $add_video = mysqli_query($connection, $video_query);
+                          $message_query = "INSERT INTO weekly_message(message) VALUES('$message')";
+                          $add_message = mysqli_query($connection, $message_query);
 
-                          confirmQuery($add_video);
-                          if($add_video){
+                          confirmQuery($add_message);
+                          if($add_message){
 
                           echo "<div class='alert alert-success' role='alert'>
-                          Your a genius ".  $username ." video successfully added!
+                          Your a genius ".  $username ." message successfully added!
                           </div>";
                         }else{
                           echo "<div class='alert alert-danger' role='alert'>
@@ -96,17 +96,17 @@
                       ?>
 
                       <form action="" method="post" >
-                          <div class="form-group">
+                          <!-- <div class="form-group">
                               <label >Video Link</label>
                               <input type="text" name="video_url"  class="form-control" placeholder="video link">
-                          </div>
+                          </div> -->
                           <div class="form-group">
-                              <label >Word from minister</label>
-                              <textarea name="video_message" class="form-control"></textarea>
+                              <label >Weekly Message</label>
+                              <textarea name="message_text" class="form-control"></textarea>
                           </div>
 
 
-                          <button type="submit" name="video" class="btn btn-success">Submit</button>
+                          <button type="submit" name="message" class="btn btn-success">Submit</button>
                       </form>
                         <!-- /Form -->
 

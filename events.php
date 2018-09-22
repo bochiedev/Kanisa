@@ -68,9 +68,9 @@ $event_date = $_POST['eventdate'];
   }else{
 
 
-
   $query = "SELECT * FROM events WHERE event_date = '$event_date'  ";
   $result = mysqli_query($connection, $query);
+
 
 
     while($row = mysqli_fetch_assoc($result)) {
@@ -81,13 +81,6 @@ $event_date = $_POST['eventdate'];
           $event_location2 = $row["event_location"];
           $event_info2 = $row["event_info"];
           $event_time2 = $row["event_time"];
-
-
-
-
-
-
-
 
 
 ?>
@@ -104,7 +97,7 @@ $event_date = $_POST['eventdate'];
 </div>
 </div>
 <?php
- 
+
 }
 }
 }
@@ -121,11 +114,32 @@ $event_date = $_POST['eventdate'];
               <h2 class="section-title text-center">Upcoming Events</h2>
                 <?php
 
-									$query = "SELECT * FROM events LIMIT 5";
+                $now = date("Y-m-d");
+									$query = "SELECT * FROM events WHERE event_date > '$now' LIMIT 5";
 									$result = mysqli_query($connection, $query);
 
+                  $row = mysqli_fetch_assoc($result);
 
-										while($row = mysqli_fetch_assoc($result)) {
+
+
+                  if(!$row){
+
+                    echo '	<div class="row row-striped">
+
+                  			<div class="col-12 text-center" >
+                  				<h3 class="text-uppercase text-primary"><strong> No Events Currently </strong></h3>
+
+                  			</div>
+                  		</div>';
+
+
+                  }else{
+
+
+
+
+
+										while($row) {
 
 
 											$event_name =  $row["event_name"];
@@ -157,7 +171,7 @@ $event_date = $_POST['eventdate'];
 		</div>
     <hr>
     <?php
-}
+} }
 
 ?>
 	</div>

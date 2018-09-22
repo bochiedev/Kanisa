@@ -61,6 +61,18 @@ include_once "_includes/head_tags.php";
 											$category_id = $row["id"];
 											$category_date = $row["category_date"];
 											$category_image = $row["category_image"];
+                      $category_name = $row["category_name"];
+
+
+                      $unixTimestamp = strtotime($category_date);
+
+
+                      $day_name = date('D',$unixTimestamp);
+                      $month_name = date('M',$unixTimestamp);
+                      $year = date('Y',$unixTimestamp);
+                      $day = date('d',$unixTimestamp);
+
+
 
 
 
@@ -72,12 +84,26 @@ include_once "_includes/head_tags.php";
 									<div class="col-md-3 col-xs-6" style="margin-bottom:10px;">
 
 										<div class="card col-md-10 " style="padding:0px;">
-											<img height="200px" width="100%" class="card-img-top" src="admin/images/<?php echo $category_date."/".$category_image;?>" alt="" class="media-image">
+											<img height="200px" width="100%" class="card-img-top" src="admin/images/<?php echo $category_name."/".$category_image;?>" alt="" class="media-image">
 											<div class="card-body">
 												<h5 class="media-name ">
-													<?php echo $category_date;?>
+
+                          <?php
+                          if($category_date == $category_name ){
+
+
+                            echo $day_name.' '.$day.' '.$month_name.' '.$year;
+                            // echo 'day_name';
+
+
+
+                          }else{
+
+													 echo $category_name;
+                        }
+                        ?>
 												</h5>
-												<?php echo "<a href='gallery.php?category=$category_id' class='btn btn-primary'>View {$category_date}</a>";
+												<?php echo "<a href='gallery.php?category=$category_id' class='btn btn-primary'>View Images</a>";
 												?>
 											</div>
 										</div>

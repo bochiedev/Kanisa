@@ -44,6 +44,14 @@ include_once "_includes/head_tags.php";
         if (isset($_GET['category'])) {
             $category_id = $_GET['category'];
 
+            $query_cat = "SELECT * FROM media_category WHERE id = $category_id ";
+            $cat_result = mysqli_query($connection, $query_cat);
+
+                while($row = mysqli_fetch_assoc($cat_result)) {
+
+                    $folder_name = $row["category_name"];
+}
+
 $query = "SELECT * FROM media WHERE media_category = $category_id ";
 $result = mysqli_query($connection, $query);
 
@@ -60,7 +68,7 @@ $result = mysqli_query($connection, $query);
  <div class="col-md-3 col-xs-12">
 
                 <img class="img-thumbnail img-fluid"
-                    src="admin/images/<?php echo $media_date."/".$media_name;?>" />
+                    src="admin/images/<?php echo $folder_name."/".$media_name;?>" />
 
         </div>
 

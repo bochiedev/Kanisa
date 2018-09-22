@@ -2097,6 +2097,15 @@ ul.bullet li a:hover {
 }
 
 @media screen and (min-width: 767px) {
+
+  #message-secttion{
+    max-height:300px;
+    overflow: scroll;
+  }
+
+  #tweets{
+    max-height:300px;
+  }
   #myCarousel{
 
    height: 50vh;

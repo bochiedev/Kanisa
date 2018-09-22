@@ -1,5 +1,7 @@
 <?php
   include_once "_includes/db.inc.php";
+  include_once "_includes/twitter/tweets.php";
+
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,78 +109,83 @@
                             $result = mysqli_query($connection, $query);
 
 
-                                while($row = mysqli_fetch_assoc($result)) {
-
-
-
+                                while ($row = mysqli_fetch_assoc($result)) {
                                     $media_name = $row["category_image"];
                                     $media_date = $row["category_date"];
+                                    $folder_name = $row["category_name"];
+
+                                    $unixTimestamp = strtotime($media_date);
 
 
-                            ?>
+
+                                    $day_name = date('D', $unixTimestamp);
+                                    $month_name = date('M', $unixTimestamp);
+                                    $year = date('Y', $unixTimestamp);
+                                    $day = date('d', $unixTimestamp); ?>
                             <div class="col-md-3 col-xs-6" style="padding:0px;">
 
                                     <div class="col-md-10 col-md-offset-1">
-                                    <img height="200px" width="100%" style="overflow:hidden;" src="admin/images/<?php echo $media_date."/".  $media_name;?>"></img>
+                                    <img height="200px" width="100%" style="overflow:hidden;" src="admin/images/<?php echo $folder_name."/".  $media_name; ?>"></img>
                                     <div class="card-body">
-                                        <h3 class="card-title">
-                                            <a href="media.php">
-                                                <?php echo $media_date; ?>
+                                          <a href="media.php">
+
+                                          <?php
+                                          if ($media_date == $folder_name) {
+                                              echo $day_name.' '.$day.' '.$month_name.' '.$year;
+                                          // echo 'day_name';
+                                          } else {
+                                              echo $folder_name;
+                                          } ?>
                                             </a>
-                                        </h3>
                                     </div>
 
                                 </div>
                             </div>
                             <?php
-                    }
+                                }
                         ?>
 
                     </div>
                 </div>
 
             </div>
-            <section style="background: #f7f7f9; padding: 35px 20px;">
+            <section id="message-section" style="background: #f7f7f9; padding: 35px 20px; ">
                 <div class="container-fluid">
                     <div class="row">
 
 
                                                       <?php
 
-                                                  $videoquery = "SELECT * FROM video ORDER BY id DESC LIMIT 1 ";
-                                                  $videoresult = mysqli_query($connection, $videoquery);
+                                                  $messagequery = "SELECT * FROM weekly_message ORDER BY id DESC LIMIT 1 ";
+                                                  $messageresult = mysqli_query($connection, $messagequery);
 
 
-                                                      while($row = mysqli_fetch_assoc($videoresult)) {
+                                                      while ($row = mysqli_fetch_assoc($messageresult)) {
+                                                          $message_image =  $row["message_image"];
+                                                          $message = $row["message"]; ?>
 
-
-                                                          $video_url =  $row["video_url"];
-                                                          $video_message = $row["video_message"];
-
-
-
-
-
-                                                  ?>
-
-                        <div class="col-md-6" style="margin-bottom: 20px;">
+                        <!-- <div class="col-md-6" style="margin-bottom: 20px;">
                             <iframe class="col-md-12 " src="<?php echo $video_url; ?>"
                                 frameborder="0" allowfullscreen="1" style="height: 388.125px;"></iframe>
-                        </div>
-                        <div class="col-md-6 ">
+
+
+
+                        </div> -->
+                        <div class="col-md-8 col-md-offset-2 text-center">
 
                             <h2>
-                                Word from Our Ministers
+                                - Message Of The Week -
                             </h2>
                             <p>
-                              <?php echo $video_message; ?>
+                              <?php echo $message; ?>
                             </p>
 
 
 
 
                         </div>
-                      <?php } ?>
+                      <?php
+                                                      } ?>
 
                     </div>
                 </div>
@@ -189,8 +196,22 @@
             <div class="fullwidth-block">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div id="tweets" class="col-md-6">
                             <h2 class="section-title">Recent Tweets</h2>
+
+
+                                <a class="twitter-timeline"
+                                data-aria-polite="assertive"
+                                data-lang="en" data-chrome="nofooter noheader"
+                                href="https://twitter.com/Bochie_ltd"
+                                data-tweet-limit="1"
+                                data-height="100"
+                                data-dnt="true"
+                                data-link-color="#2B7BB9"
+                                data-cards="hidden"
+                                hide_media="true"
+                                data-conversation="none">
+                                </a>
 
                         </div>
                         <div class="col-md-6">
@@ -199,22 +220,24 @@
 
                                 <?php
 
-                            $query = "SELECT * FROM events ORDER BY event_date DESC LIMIT 3 ";
+                                $now = date("Y-m-d");
+
+
+                            $query = "SELECT * FROM events WHERE event_date > '$now' ORDER BY event_date DESC LIMIT 3 ";
                             $result = mysqli_query($connection, $query);
+                            $row = mysqli_fetch_assoc($result);
 
 
-                                while($row = mysqli_fetch_assoc($result)) {
 
-
+                            if (!$row) {
+                                echo '
+                            				<h3 class="text-uppercase text-primary"><strong> No Events Currently </strong></h3>
+';
+                            } else {
+                                while ($row = mysqli_fetch_assoc($result)) {
                                     $event_title =  $row["event_name"];
                                     $event_date = $row["event_date"];
-                                     $event_location = $row["event_location"];
-
-
-
-
-
-                            ?>
+                                    $event_location = $row["event_location"]; ?>
 
                                     <li>
                                         <div class="notification-detail">
@@ -237,13 +260,14 @@
                                     </li>
 
                                     <?php
-                                   }
+                                }
+                            }
 
                                 ?>
 
                             </ul>
 
-                            <div class="text-center">
+                            <div class="text-left">
                                 <a href="events.php" class="btn btn-primary">See all Events</a>
                             </div>
                         </div>
